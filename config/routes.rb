@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'investments/new'
+  get 'investments/create'
+  get 'properties/new'
+  get 'properties/create'
+  get 'properties/index'
+  get 'properties/show'
   devise_for :users
   root to: 'pages#home'
   resources :properties, only: [:new, :create, :index, :show] do
