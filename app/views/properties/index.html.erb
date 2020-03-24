@@ -23,17 +23,22 @@
           <% else %>
           <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-img-top"%>
           <% end %>
-          <p class='name'><%= property.description %></p>
           <h5 class="card-description text-center my-auto"><%= property.name %></h5>
         </div>
+        <br>
+            <div class="meter">
+              <span class="percentage pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
+            </div>
         <div class="card-body">
           <div class="card-see-more text-center">
-            <p class="user-name"><%= property.user.first_name + " " + property.user.last_name %></p>
+            <p class="user-name">Developer: <%= property.user.first_name + " " + property.user.last_name %></p>
           </div>
           <div>
-            <p class="location text-center"><%= property.location %></p>
+            <p class="location text-center">Location: <%= property.location %></p>
+            <p class='name'>Description: <%= property.description %></p>
           </div>
         </div>
+        <h3 class="btn btn-property text-center">VIEW DETAILS</h3>
       </div>
       <% end %>
     </div>

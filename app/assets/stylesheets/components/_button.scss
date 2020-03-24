@@ -16,3 +16,19 @@
   color: black;
 
 }
+
+.btn-property {
+  padding: 15px;
+  background-color: #0CFFCA;
+  color: black;
+  border-color: #0CFFCA;
+  opacity: 0.8;
+  font-weight: bolder;
+  width: 100%;
+}
+
+.btn-property:hover {
+  opacity: 1;
+  background-color: #0CFFCA;
+  border-color: #0CFFCA;
+}
