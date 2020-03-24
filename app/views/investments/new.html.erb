@@ -1,2 +1,13 @@
-<h1>Investments#new</h1>
-<p>Find me in app/views/investments/new.html.erb</p>
+<div class='d-flex justify-content-around'>
+<div> <h4> Accept Terms and Conditions </h4>
+  <p> Box to come here with PDF to scroll down </p>
+</div>
+  <div class="justify-content-center-between" >
+  <h4> Confirm Investment Amount </h4>
+    <%= simple_form_for([@property, @investment ])  do |form| %>
+      <%= form.input :amount%>
+      <%= form.button :submit, 'Invest Now', class: "btn btn-warning btn-sm btn-submit" %>
+    <% end %>
+  </div>
+</div>
+
