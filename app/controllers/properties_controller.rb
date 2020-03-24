@@ -13,5 +13,11 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @property = Property.find(params[:id])
+    @markers = [{
+
+      lat: @property.latitude,
+      lng: @property.longitude
+    }]
   end
 end
