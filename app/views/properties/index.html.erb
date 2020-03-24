@@ -1,2 +1,43 @@
-<h1>Properties#index</h1>
-<p>Find me in app/views/properties/index.html.erb</p>
+<div class="container">
+
+  <%= form_tag properties_path, method: :get do %>
+  <div class="search-form-control form-group">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by name or location"
+    %>
+     <%= button_tag(type: "submit", class:"btn btn-search") do  %>
+      <i class="fas fa-search"></i> Search
+      <% end %>
+  </div>
+  <% end %>
+  <div class="row">
+    <% @properties.each do |property| %>
+    <div class="col-4 mt-4">
+      <%= link_to property_path(property) do  %>
+      <div class="card-property">
+        <div class="hover-img">
+          <% if property.photo.attached? %>
+          <%= cl_image_tag property.photo.key, class: "card-img-top" %>
+          <% else %>
+          <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-img-top"%>
+          <% end %>
+          <p class='name'><%= property.description %></p>
+          <h5 class="card-description text-center my-auto"><%= property.name %></h5>
+        </div>
+        <div class="card-body">
+          <div class="card-see-more text-center">
+            <p class="user-name"><%= property.user.first_name + " " + property.user.last_name %></p>
+          </div>
+          <div>
+            <p class="location text-center"><%= property.location %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+      <% end %>
+    </div>
+  </div>
+

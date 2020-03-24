@@ -5,9 +5,12 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
+gem 'pg_search', '~> 2.3.0'
 gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'cloudinary', '~> 1.12.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -16,7 +19,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+
 gem 'simple_form'
+
+gem 'geocoder'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
