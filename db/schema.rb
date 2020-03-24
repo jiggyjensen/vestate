@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_095828) do
+ActiveRecord::Schema.define(version: 2020_03_24_145730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "investments", force: :cascade do |t|
     t.date "entry_date"
-    t.string "amount"
+    t.integer "amount"
     t.date "exit_date"
     t.bigint "user_id"
     t.bigint "property_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_095828) do
     t.string "valuation"
     t.string "name"
     t.string "description"
-    t.string "amount_to_be_raised"
+    t.integer "amount_to_be_raised"
     t.string "financials"
     t.string "area_description"
     t.bigint "user_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_095828) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
