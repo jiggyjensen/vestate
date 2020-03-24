@@ -1,42 +1,43 @@
 
 
-<%= image_tag "https://images.unsplash.com/photo-1555882422-3af55f50fab1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600", class: "card-img-top"%>
+<%= image_tag "https://images.unsplash.com/photo-1555882422-3af55f50fab1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600", class: "card-img-top bg-white"%>
 
 <div class="show-card bg-white">
   <div class="meter mt-3 mx-5">
     <span class="percentage pl-4 pt-1"style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
   </div>
-<h1 class="text-center pt-3">Title/description</h1>
-<p class="p-3">Last but not least, if you want to get really fancy, you can make your app a PWA (progressive web app), which means you’ll be able even to install it as an icon on your phone and have some offline features! It’s a bit easier than you’d expect, and there’s a good guide here: Last but not least, if you want to get really fancy, you can make your app a PWA (progressive web app), which means you’ll be able even to install it as an icon on your phone and have some offline features! It’s a bit easier than you’d expect, and there’s a good guide here</p>
-
-<div class="d-flex justify-content-around">
-  <div class ="card-show">
-    <h2 class="p-5">ROI</h2>
+  <h1 class="text-center pt-3">Title/description</h1>
+  <p class="mx-5 p-3">Last but not least, if you want to get really fancy, you can make your app a PWA (progressive web app), which means you’ll be able even to install it as an icon on your phone and have some offline features! It’s a bit easier than you’d expect, and there’s a good guide here: Last but not least, if you want to get really fancy, you can make your app a PWA (progressive web app), which means you’ll be able even to install it as an icon on your phone and have some offline features! It’s a bit easier than you’d expect, and there’s a good guide here</p>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-around">
+    <div class ="card-show text-center">
+      <h2 class="p-3">ROI</h2>
+    </div>
+    <div class="card-show text-center">
+      <h2 class="p-3 ">Download documents</h2>
+    </div>
   </div>
-  <div class="card-show">
-    <h2 class="p-5 ">download documents</h2>
-</div>
-</div>
 
-</div>
+
 
 
 
 
 <div>
 
-<div class="d-flex justify-content-between ">
-<div class=" card-show ml-3">
-<h2 class="p-3 text-center">area description</h2>
+  <div class="d-flex justify-content-between ">
+    <div class=" card-show m-3">
+      <h2 class="p-3 text-center">Area description</h2>
+    </div>
+    <div
+    id="map"
+    class="show-map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
-<div
-id="map"
-style="height: 500px; width: 600px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
 </div>
-
-</div>
-<div><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
+<div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
 
