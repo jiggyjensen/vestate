@@ -2,9 +2,27 @@
   height: 500px;
   width: 100%;
   object-fit: cover;
+  margin-bottom: 15px;
   // border: solid 1px $primary;
 }
 
 .card-show {
   border: solid 1px #393E46;
+}
+
+.card-property {
+  margin: 10px;
+  background: #333;
+  width: 400px;
+  border-radius: 6px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+    0 0 1rem rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card-body {
+  text-align: center;
 }
