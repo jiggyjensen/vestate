@@ -5,6 +5,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
+gem 'pg_search', '~> 2.3.0'
 gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
@@ -17,7 +18,15 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+
+gem 'simple_form'
+
+gem 'geocoder'
+
 gem 'dotenv-rails', groups: [:development, :test]
+
+
 
 
 group :development do
