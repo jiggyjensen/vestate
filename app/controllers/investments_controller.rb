@@ -26,11 +26,3 @@ def investments_params
 end
 
 end
-
- # t.date "entry_date"
- #    t.string "amount"
- #    t.date "exit_date"
- #    t.bigint "user_id"
- #    t.bigint "property_id"
- #    t.datetime "created_at", null: false
- #    t.datetime "updated_at", null: false
