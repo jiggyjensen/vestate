@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_144703) do
+ActiveRecord::Schema.define(version: 2020_03_24_095828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "investments", force: :cascade do |t|
+    t.date "entry_date"
+    t.string "amount"
+    t.date "exit_date"
+    t.bigint "user_id"
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_investments_on_property_id"
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "sales_proceeds"
+    t.string "location"
+    t.string "valuation"
+    t.string "name"
+    t.string "description"
+    t.string "amount_to_be_raised"
+    t.string "financials"
+    t.string "area_description"
+    t.bigint "user_id"
+    t.string "dividend"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "saved_properties", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_saved_properties_on_property_id"
+    t.index ["user_id"], name: "index_saved_properties_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +61,23 @@ ActiveRecord::Schema.define(version: 2020_03_23_144703) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.boolean "validated_developer", default: false
+    t.string "phone_number"
+    t.date "date_of_birth"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "admin", default: false
+    t.boolean "validated_investor", default: false
+    t.string "description"
+    t.integer "experience_dev"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "investments", "properties"
+  add_foreign_key "investments", "users"
+  add_foreign_key "properties", "users"
+  add_foreign_key "saved_properties", "properties"
+  add_foreign_key "saved_properties", "users"
 end
