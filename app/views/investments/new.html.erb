@@ -1,8 +1,9 @@
 <div class='d-flex justify-content-around'>
-  <div> <h4> Accept Terms and Conditions </h4>
+  <div class="card-new-investment align-items-center p-5">
+    <h4> Accept Terms and Conditions </h4>
     <p> Box to come here with PDF to scroll down </p>
   </div>
-  <div class="justify-content-center-between" >
+  <div class="card-new-investment align-items-center p-5">
     <h4> Confirm Investment Amount </h4>
     <%= simple_form_for([@property, @investment ])  do |form| %>
     <div class= "form-group" >
@@ -11,7 +12,7 @@
        <%= form.check_box :terms_accepted, class: "form-check-input" %>
        <%= form.label "I agree with the terms and conditions", class: "form-check-label" %>
      </div>
-     <%= form.button :submit, 'Invest Now', class: "btn btn-warning btn-sm btn-submit" %>
+     <%= form.button :submit, 'Invest Now', class: "btn btn-warning btn-sm btn-submit w-100" %>
      <% end %>
    </div>
  </div>

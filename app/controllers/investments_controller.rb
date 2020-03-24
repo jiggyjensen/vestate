@@ -9,9 +9,11 @@ class InvestmentsController < ApplicationController
     @investment = Investment.new(investments_params)
     @investment.user = current_user
     @investment.property = @property
-    if @investment.save
+    if @investment.save && params[:investment][:terms_accepted] == "1"
       redirect_to root_path
     else
+      @property = Property.find(params[:property_id])
+      @investment = Investment.new
       render :new
     end
   end
@@ -20,7 +22,7 @@ class InvestmentsController < ApplicationController
 private
 
 def investments_params
-  params.require(:investment).permit(:amount)
+  params.require(:investment).permit(:amount, :terms_accepted)
 end
 
 end
