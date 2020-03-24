@@ -7,7 +7,9 @@
 }
 
 .card-show {
-  border: solid 1px #393E46;
+
+  flex-basis: 50%;
+  min-height: 200px;
 }
 
 .card-property {
