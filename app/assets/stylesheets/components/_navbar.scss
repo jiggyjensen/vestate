@@ -1,6 +1,19 @@
 .navbar-lewagon {
+  width: 100%;
   justify-content: space-between;
-  background: white;
+  position: fixed;
+  top: 0;
+  transition: background-color 400ms linear;
+}
+
+.navbar-transparent {
+  background: transparent;
+
+}
+
+.navbar-colored {
+  transition: background-color 400ms linear;
+  background: $dark-grey;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +22,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link {
+  color: $white;
 }
