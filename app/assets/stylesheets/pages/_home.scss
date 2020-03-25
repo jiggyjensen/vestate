@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 .how-it-works {
-  background-color: $white;
+
   height: 85vh;
 }
 
@@ -39,3 +39,22 @@
   box-shadow: 5px 10px #393E46;
 }
 
+
+.featured-prop {
+  height: 85vh;
+  background: #ced1d2;
+}
+
+.featured-prop h1 {
+  text-align: center;
+}
+
+.benef {
+  height: 85vh;
+  background: #ced1d2;
+}
+
+.promises {
+ height: 85vh;
+ background: #F2F3F4;
+}
