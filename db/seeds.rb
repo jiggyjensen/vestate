@@ -41,7 +41,10 @@ users.each do |user|
     user: user,
     name: Faker::Address.street_address,
     description: Faker::Address.community,
-    location: Faker::Address.city)
+    location: Faker::Address.city,
+    area_description: Faker::Quote.yoda,
+    dividend: rand(0..100),
+    end_date: Date.today + rand(14..100))
   url = "https://source.unsplash.com/1024x768/?building,property"
   building = URI.open(url)
   property.photo.attach(io: handle_string_io_as_file(building, 'image.png'), filename: "Property #{user.id}", content_type: 'image/png')
