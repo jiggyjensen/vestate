@@ -5,13 +5,6 @@
   border-radius: 16px;
 }
 
-.card-img-top {
-  height: 350px;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  margin-bottom: 15px;
-}
 
 .card-property {
   margin: 10px;
@@ -57,4 +50,23 @@
 
 .card-property:hover .card__info-hover {
     opacity: 1;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $grey-border;
+
+}
+
+.border-right {
+  border-right: 1px solid $grey-border;
+}
+
+
+.card-show {
+  flex-basis: 50%;
+  min-height: 100px;
+  border: solid 1px $grey-border;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 10px;
 }
