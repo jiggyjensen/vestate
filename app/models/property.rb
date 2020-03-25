@@ -13,20 +13,18 @@ class Property < ApplicationRecord
     tsearch: { prefix: true }
   }
 
-  def percentage_achieved
-    total_amount_invested = 0
-    self.investments.each do |investment|
-      total_amount_invested += investment.amount
-    end
-    (( total_amount_invested.to_f / amount_to_be_raised.to_f ) * 100)
-  end
-
   def sum_amount_invested
     total_amount_invested = 0
     self.investments.each do |investment|
       total_amount_invested += investment.amount
     end
+    total_amount_invested
   end
+
+  def percentage_achieved
+    (sum_amount_invested.to_f / amount_to_be_raised.to_f ) * 100
+  end
+
 
   def days_left
     (self.end_date.to_date - Date.today.to_date).to_i
