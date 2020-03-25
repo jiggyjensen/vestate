@@ -1,2 +1,26 @@
-<h1>Properties#new</h1>
-<p>Find me in app/views/properties/new.html.erb</p>
+<div class="col-xs-12 col-md-6 offset-md-1 black_bgr mt-3">
+  <h1 class="text-center">Tell us about your property</h1>
+  <%= simple_form_for @property do |f| %>
+  <div class="short_input">
+    <!-- Need to find a way to make the default text as placeholders and not actual default but can come back later on it -->
+    <%= f.input :name, input_html: { value: 'Whats the name of the property ?'} %>
+    <%= f.input :location, input_html: { value: 'where is the property located ?'} %>
+    <!-- Geocoding can be used based on the location and an auto search can be added -->
+    <%= f.input :description, input_html: { value: 'Give us some details, the more the better !'} %>
+    <%= f.input :area_description, input_html: { value: 'What is the area like, any stats would be great'} %>
+    <%= f.input :valuation, input_html: { min: "0"} %>
+    <!-- This doesnt show up with a downarrow and i think because in the model its not an integer (which it should be) -->
+    <%= f.input :amount_to_be_raised, input_html: {min: "0"} %>
+    <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
+    <%= f.input :dividend, input_html: {min: "0"} %>
+    <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
+    <%= f.input :financials, input_html: { value: 'Input some text about the property cost, development etc breakdown of costs and returns'} %>
+    <%= f.input :photo, as: :file, input_html: { value: 'Add some images'} %>
+    <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
+  </div>
+  <div class="text-center">
+    <%= f.submit "Submit", class: "btn-success w-100" %>
+ <% end %>
+    <%= link_to "Go back", root_path %>
+  </div>
+</div>
