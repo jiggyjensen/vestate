@@ -24,22 +24,27 @@
 
 }
 
+.card-property-img {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+}
+
 .card-property {
-  margin: 10px;
   background: #333;
-  width: 400px;
   border-radius: 6px;
-  padding: 2rem;
   color: white;
   box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
     0 0 1rem rgba(0,0,0,0.2);
-  overflow: hidden;
   text-decoration: none;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
 }
 
-.card-body {
-  text-align: center;
-
+.card__like {
+    width: 25px;
+    margin: 10px;
+    position: absolute;
 }
 
 .card-property:hover {
@@ -48,11 +53,12 @@
 }
 
 .card__info {
-  z-index: 2;
   background-color: #333;
+  padding: 30px;
+  text-align: center;
 }
 
-.card-property:hover .card-img-top--hover {
+.card-property:hover .card-property-img--hover {
     height: 450px;
     opacity: 0.6;
 }
@@ -63,6 +69,6 @@
 }
 
 .card-property:hover .card__info-hover {
-  opacity: 1;
+    opacity: 1;
 }
 
