@@ -6,16 +6,28 @@
 }
 
 .card-img-top {
-  height: 350px;
+  height: 500px;
   width: 100%;
-  background-size: cover;
-  background-position: center center;
+  object-fit: cover;
   margin-bottom: 15px;
+
+  // border: solid 1px $primary;
+}
+
+.card-show {
+  flex-basis: 50%;
+  min-height: 100px;
+  border: solid 1px $grey-border;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 10px;
+
 }
 
 .card-property {
   margin: 10px;
   background: #333;
+  width: 400px;
   border-radius: 6px;
   padding: 2rem;
   color: white;
@@ -23,18 +35,13 @@
     0 0 1rem rgba(0,0,0,0.2);
   overflow: hidden;
   text-decoration: none;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
 }
 
-.card__like {
-    width: 25px;
-    margin: 5px;
-}
-
-.card-property-body {
+.card-body {
   text-align: center;
 
 }
+
 .card-property:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
     transform: scale(1.10, 1.10);
@@ -58,3 +65,4 @@
 .card-property:hover .card__info-hover {
   opacity: 1;
 }
+
