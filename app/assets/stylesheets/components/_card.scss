@@ -10,6 +10,7 @@
   width: 100%;
   object-fit: cover;
   margin-bottom: 15px;
+
   // border: solid 1px $primary;
 }
 
@@ -20,6 +21,7 @@
   border-radius: 4px;
   padding: 30px;
   margin: 10px;
+
 }
 
 .card-property {
@@ -39,3 +41,28 @@
   text-align: center;
 
 }
+
+.card-property:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+  z-index: 2;
+  background-color: #333;
+}
+
+.card-property:hover .card-img-top--hover {
+    height: 450px;
+    opacity: 0.6;
+}
+
+.card-property:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card-property:hover .card__info-hover {
+  opacity: 1;
+}
+
