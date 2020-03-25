@@ -2,6 +2,7 @@
   <h1 class="text-center">Tell us about your property</h1>
   <%= simple_form_for @property do |f| %>
   <div class="short_input">
+    <!-- Need to find a way to make the default text as placeholders and not actual default but can come back later on it -->
     <%= f.input :name, input_html: { value: 'Whats the name of the property ?'} %>
     <%= f.input :location, input_html: { value: 'where is the property located ?'} %>
     <!-- Geocoding can be used based on the location and an auto search can be added -->
@@ -15,6 +16,7 @@
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
     <%= f.input :financials, input_html: { value: 'Input some text about the property cost, development etc breakdown of costs and returns'} %>
     <%= f.input :photo, as: :file, input_html: { value: 'Add some images'} %>
+    <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
   </div>
   <div class="text-center">
     <%= f.submit "Submit", class: "btn-success w-100" %>
