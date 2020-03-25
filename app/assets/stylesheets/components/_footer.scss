@@ -43,10 +43,6 @@
   opacity: 1;
 }
 
-.footer-text {
-  color: #1EDD88;
-}
-
 .footer-contact {
   display: flex;
 }
@@ -54,4 +50,14 @@
   color: #1EDD88;
   margin: 0;
   padding: 0;
+}
+
+.footer-form {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+ margin-left: 5px;
+ padding: 0;
 }
