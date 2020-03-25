@@ -1,8 +1,16 @@
 class PropertiesController < ApplicationController
   def new
+    @property = Property.new
   end
 
   def create
+    @property = Property.new(property_params)
+    @property.user = current_user
+    if @property.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def index
@@ -22,4 +30,11 @@ class PropertiesController < ApplicationController
 
     }]
   end
+
+private
+
+def property_params
+    params.require(:property).permit(:name, :location, :description, :area_description, :valuation, :amount_to_be_raised, :dividend, :financials)
+end
+
 end

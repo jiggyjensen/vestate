@@ -3,7 +3,6 @@ class InvestmentsController < ApplicationController
     @property = Property.find(params[:property_id])
     @investment = Investment.new
   end
-
   def create
     @property = Property.find(params[:property_id])
     @investment = Investment.new(investments_params)
@@ -17,12 +16,8 @@ class InvestmentsController < ApplicationController
       render :new
     end
   end
-
-
 private
-
 def investments_params
   params.require(:investment).permit(:amount, :terms_accepted)
 end
-
 end
