@@ -17,7 +17,9 @@ class PropertiesController < ApplicationController
     @markers = [{
 
       lat: @property.latitude,
-      lng: @property.longitude
+      lng: @property.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { property: @property })
+
     }]
   end
 end
