@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   transition: background-color 400ms linear;
+  z-index: 100;
 }
 
 .navbar-transparent {
