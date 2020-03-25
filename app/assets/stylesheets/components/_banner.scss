@@ -30,3 +30,41 @@
 .btn-pad {
   margin-top: 60px;
 }
+
+
+.banner-show {
+  height: 350px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+  position: relative;
+
+}
+
+.button-banner-show {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+
+}
+
+.days-banner {
+ position: absolute;
+ font-weight: 800;
+ border-top: solid 3px white;
+ border-bottom: solid 3px white;
+ color: white;
+ // background: white;
+ bottom: 30px;
+ right: -40px;
+ // padding: 5px;
+ transform: rotate(-45deg);
+ p {
+  margin-bottom: 0;
+  padding-right: 50px;
+  padding-left: 50px;
+  }
+
+}

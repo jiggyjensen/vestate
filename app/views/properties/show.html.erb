@@ -1,29 +1,42 @@
+
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1555882422-3af55f50fab1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600);">
+  <div class="days-banner">
+    <p><%=@property.days_left%> days left</p>
+  </div>
+  <div class=" button-banner-show text-center">
+  <%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
+  </div>
+</div>
 <div class="container bg-white">
-
-<%= image_tag "https://images.unsplash.com/photo-1555882422-3af55f50fab1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600", class: "card-img-top bg-white"%>
-
 <div class="show-card bg-white">
   <div class="meter mt-3 mx-5">
     <span class="percentage pl-4 pt-1"style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
   </div>
-  <h2 class="text-center pt-3"> <%=@property.name%></h2>
-  <p class="text-center"> <%=@property.days_left%> days left</p>
-  <p class=" text-center mx-5"> <%=@property.description%></p>
+  <h2 class="text-center border-bottom pt-3"> <%=@property.name%></h2>
+
+  <p class=" text-center border-bottom mx-5"> <%=@property.description%></p>
 </div>
 <div class="container bg-white">
   <div class="d-flex justify-content-around">
-    <div class ="card-show text-center">
-      <h2>ROI</h2>
-
-      <h3 class=""><%=@property.dividend%>%</h3>
+    <div class ="d-flex justify-content-around card-show text-center">
+      <div>
+      <h2 class="border-bottom">ROI</h2>
+      <h3 class="border-right"></h3>
+      <%= pie_chart @property.percentage_achieved %>
+      </div>
+      <div>
+        <h2 class="border-bottom">Progress</h2>
+        <h3 class=""></h3>
+        <%= pie_chart @property.sum_amount_invested %>
+      </div>
     </div>
     <div class="card-show text-center">
-      <h3 class="p-3 ">Download documents</h3>
+      <h3 class="border-bottom">Download documents</h3>
     </div>
   </div>
   <div class="d-flex justify-content-between">
     <div class=" card-show">
-      <p class="text-center"> <%=@property.location%></p>
+      <p class="text-center border-bottom"> <%=@property.location%></p>
       <h3 class="p-3 text-center align-center"><%= @property.area_description%></h3>
     </div>
     <div
