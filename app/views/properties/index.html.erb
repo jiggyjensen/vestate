@@ -14,7 +14,7 @@
   <% end %>
   <div class="row">
     <% @properties.each do |property| %>
-    <div class="col-4 mt-4">
+    <div class="col-4 mt-4 card-property-column">
       <%= link_to property_path(property) do  %>
       <div class="card-property">
         <div class="card__info-hover">
@@ -49,3 +49,10 @@
     </div>
   </div>
 
+
+    <div
+    id="map"
+    class="show-map card-show"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
