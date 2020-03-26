@@ -2,7 +2,8 @@
   <div class="container do-it">
     <h1>Why do it <strong>alone</strong> ?</h1>
     <p>We’ve made property investing easier for you.</p>
-    <a class="btn-property btn-pad" href="#">Apply now</a>
+    <%= link_to "apply now", '/properties', class: 'btn-success' %>
+    <%= link_to "raise funds", home_developers_path, class: 'btn-secondary' %>
   </div>
 </div>
 
@@ -13,21 +14,24 @@
       <div class="info-card">
         <h3> Invest </h3>
         <p> Buy shares in income producing property investments from £100. Choose how many shares you wish to own in any available investment!</p>
+        <%= image_tag 'invest-now.svg' %>
       </div>
       <div class="info-card" id="grow">
         <h3> Grow </h3>
         <p> As property prices grow so does the value of your shares. Track the movements from your online portfolio.</p>
+        <%= image_tag 'invest-grow.svg' %>
       </div>
       <div class="info-card">
         <h3> Earn </h3>
         <p>Receive your share of the rental income in the form of monthly dividends if there are profits, and a share of any sale proceeds upon exit.</p>
+        <%= image_tag 'invest-goal.svg' %>
       </div>
     </div>
   </div>
 </div>
 
   <div class="container-fluid container-home featured-prop">
-    <h1> featured properties </h1>
+    <h1 class="pt-3 pb-5"> featured properties </h1>
     <div class="row">
       <% @properties.each do |property| %>
       <div class="col-4 mt-4">

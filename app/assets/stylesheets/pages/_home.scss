@@ -1,8 +1,6 @@
 // Specific CSS for your home-page
 
-.how-it-works {
 
-}
 
 .container-home {
   padding-top: 50px;
@@ -41,6 +39,9 @@
   box-shadow: 0px 0px $dark-green;
 }
 
+.info-card:hover {
+  box-shadow: 5px 4px 7px rgba(57, 62, 70, 0.6);
+}
 
 .featured-prop {
 
@@ -93,4 +94,8 @@
 
 .info-card h3 {
   color: #1FC1A1;
+}
+.info-card img {
+  height: 150px;
+  margin-top: 16px;
 }

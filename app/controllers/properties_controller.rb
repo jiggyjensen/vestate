@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def new
+    @solid_nav = true
     @property = Property.new
   end
 
@@ -9,7 +10,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user = current_user
     if @property.save
-      redirect_to root_path
+      redirect_to property_path(@property)
     else
       render :new
     end
@@ -33,9 +34,13 @@ class PropertiesController < ApplicationController
       }
         end
     end
+
+    @solid_nav = true
+
   end
 
   def show
+    @solid_nav = true
     @property = Property.find(params[:id])
     @markers = [{
 
@@ -45,6 +50,7 @@ class PropertiesController < ApplicationController
 
     }]
   end
+
 
 private
 

@@ -28,6 +28,8 @@ puts 'Creating new users, properties, and investments...'
 sleep(2)
 
 users = []
+cities = ["Barcelona", "Dakar", "Brussels", "New York", "Berlin", "Tel Aviv", "Cape Town", "Sevilla", "Amsterdam", "Birmingham", "Bombay", "Kyoto"]
+
 
 30.times do
   users << User.create!(
@@ -41,11 +43,15 @@ users.each do |user|
     user: user,
     name: Faker::Address.street_address,
     description: Faker::Address.community,
-    location: Faker::Address.city,
+    location: cities.sample,
     area_description: Faker::Quote.yoda,
     dividend: rand(0..100),
     end_date: Date.today + rand(14..100),
     amount_to_be_raised: 500000 )
+  investment = Investment.create!(
+    user: user,
+    property: property,
+    amount: rand(1000..500000))
   url = "https://source.unsplash.com/1024x768/?building,property"
   building = URI.open(url)
   property.photo.attach(io: handle_string_io_as_file(building, 'image.png'), filename: "Property #{user.id}", content_type: 'image/png')

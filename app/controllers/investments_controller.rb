@@ -1,5 +1,6 @@
 class InvestmentsController < ApplicationController
   def new
+    @solid_nav = true
     @property = Property.find(params[:property_id])
     @investment = Investment.new
   end
@@ -14,6 +15,7 @@ class InvestmentsController < ApplicationController
       @property = Property.find(params[:property_id])
       @investment = Investment.new
       render :new
+      flash[:alert] = "Please accept the terms and conditions"
     end
   end
 private

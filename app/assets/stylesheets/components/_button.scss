@@ -30,6 +30,7 @@
   background-color: $green;
   border-color: $green;
   color: black;
+  text-decoration: none;
 
 }
 
@@ -46,4 +47,24 @@
   opacity: 1;
   background-color: $green;
   border-color: $green;
+}
+
+.btn-radius {
+  border-radius: 10px
+}
+
+.btn-secondary {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #393E46;
+  color: #0CFFCA;
+  border-color: #0CFFCA;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+
+}
+
+.btn-secondary:hover {
+  text-decoration: none;
 }
