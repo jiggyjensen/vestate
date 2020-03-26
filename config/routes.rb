@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :properties, only: [:new, :create, :index, :show] do
     resources :investments, only: [:new, :create]
   end
+  resources :dashboards, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
