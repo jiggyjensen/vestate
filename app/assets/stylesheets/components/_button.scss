@@ -12,14 +12,17 @@
 
 .btn-success-small {
   margin: 0px;
-  padding: 5px;
-  background-color: #0CFFCA;
+  padding-left: 2px;
+  padding-right: 2px ;
+  background-color: #1EDD88;
   color: black;
   border-color: #0CFFCA;
   opacity: 0.8;
   border-radius: 32px;
   font-weight: bold;
-
+  height: 30px;
+  text-align: center;
+  vertical-align:middle;
 }
 
 .btn-success:hover {
