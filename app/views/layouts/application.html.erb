@@ -13,19 +13,22 @@
   <body>
 
 
-    <div class="main-container" >
-      <header>
+    <% if current_page?(root_path) %>
+      <div class="main-container-home">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
-      </header>
-
-      <section class="<%=  'content' unless current_page?(controller: 'pages', action: 'home')  %>">
         <%= yield %>
-      </section>
-      <footer>
-        <%= render 'shared/footer'%>
-      </footer>
-    </div>
+        <%= render 'shared/footer' %>
+      </div>
+    <% else %>
+      <div class="main-container">
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+        <%= render 'shared/footer' %>
+      </div>
+    <% end %>
+
 
 
     <%= javascript_include_tag 'application' %>
