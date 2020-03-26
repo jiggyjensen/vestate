@@ -11,10 +11,20 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer'%>
+    <div class="main-container" >
+      <header>
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+      </header>
+
+      <section class="<%=  'content' unless current_page?(controller: 'pages', action: 'home')  %>">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render 'shared/footer'%>
+      </footer>
+    </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
