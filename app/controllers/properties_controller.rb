@@ -33,6 +33,9 @@ class PropertiesController < ApplicationController
       }
         end
     end
+
+    @solid_nav = true
+
   end
 
   def show
@@ -45,6 +48,7 @@ class PropertiesController < ApplicationController
 
     }]
   end
+
 
 private
 

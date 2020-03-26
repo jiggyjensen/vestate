@@ -5,6 +5,7 @@
   top: 0;
   transition: background-color 400ms linear;
   z-index: 100;
+  height: 70px;
 }
 
 .navbar-transparent {
@@ -40,4 +41,12 @@
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
   color: #0CFFCA
+}
+
+.navbar-solid {
+  background: $dark-grey;
+}
+
+.main-container {
+  margin-top: 90px;
 }
