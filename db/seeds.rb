@@ -24,7 +24,7 @@ User.destroy_all
 
 
 sleep(2)
-puts 'Creating new properties...'
+puts 'Creating new users, properties, and investments...'
 sleep(2)
 
 users = []
