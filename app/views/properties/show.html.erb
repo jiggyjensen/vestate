@@ -21,13 +21,20 @@
     <div class ="d-flex justify-content-around card-show text-center">
       <div>
       <h2 class="border-bottom">ROI</h2>
-      <h3 class="border-right"></h3>
-      <%= pie_chart @property.percentage_achieved %>
+      <% data = [['Achieved', @property.percentage_achieved],
+          ['Remaining',  (100 - @property.percentage_achieved)]] %>
+
+      <%= pie_chart data, library: { pieSliceText: 'value' } %>
+      <%#= pie_chart [Property.find(params[:id]).percentage_achieved, (100- Property.find(params[:id]).percentage_achieved)]%>
+
       </div>
       <div>
         <h2 class="border-bottom">Progress</h2>
-        <h3 class=""></h3>
-        <%= pie_chart @property.sum_amount_invested %>
+        <% data = [['Achieved', @property.sum_amount_invested ],
+          ['Remaining',  (@property.amount_to_be_raised - @property.sum_amount_invested )]] %>
+
+      <%= pie_chart data, library: { pieSliceText: 'value' } %>
+
       </div>
     </div>
     <div class="card-show text-center">
