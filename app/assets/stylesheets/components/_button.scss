@@ -1,9 +1,9 @@
 .btn-success {
   margin-top: 15px;
   padding: 12px;
-  background-color: #0CFFCA;
+  background-color: $green;
   color: black;
-  border-color: #0CFFCA;
+  border-color: $green;
   opacity: 0.8;
   border-radius: 32px;
   font-weight: bold;
@@ -14,9 +14,9 @@
   margin: 0px;
   padding-left: 2px;
   padding-right: 2px ;
-  background-color: #1EDD88;
+  background-color: $green;
   color: black;
-  border-color: #0CFFCA;
+  border-color: $green;
   opacity: 0.8;
   border-radius: 32px;
   font-weight: bold;
@@ -27,15 +27,15 @@
 
 .btn-success:hover {
   opacity: 1;
-  background-color: #0CFFCA;
-  border-color: #0CFFCA;
+  background-color: $green;
+  border-color: $green;
   color: black;
 
 }
 
 .btn-property {
   padding: 10px;
-  background-color: #0CFFCA;
+  background-color: $green;
   color: black;
   opacity: 0.8;
   font-weight: bolder;
@@ -44,6 +44,6 @@
 
 .btn-property:hover {
   opacity: 1;
-  background-color: #0CFFCA;
-  border-color: #0CFFCA;
+  background-color: $green;
+  border-color: $green;
 }
