@@ -9,7 +9,7 @@ class InvestmentsController < ApplicationController
     @investment.user = current_user
     @investment.property = @property
     if @investment.save && params[:investment][:terms_accepted] == "1"
-      redirect_to root_path
+      redirect_to property_path(@property)
     else
       @property = Property.find(params[:property_id])
       @investment = Investment.new
