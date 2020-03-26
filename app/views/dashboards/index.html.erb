@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% if current_user.investments.any? %>
+        <h1 class="btn-dash text-center"> My Dashboard </h1>
+        <% @investments.each do |investment| %>
+        <%= investment.amount %>
+        <%= investment.property.name %>
+        <%= investment.property.location %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
