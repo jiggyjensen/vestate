@@ -1,8 +1,6 @@
 // Specific CSS for your home-page
 
-.how-it-works {
 
-}
 
 .container-home {
   padding-top: 50px;
@@ -38,9 +36,12 @@
   margin-left: 20px;
   margin-right: 20px;
   padding: 24px 24px 24px 24px;
-  box-shadow: 5px 10px #393E46;
+  box-shadow: 5px 4px 7px rgba(57, 62, 70, 0.4);
 }
 
+.info-card:hover {
+  box-shadow: 5px 4px 7px rgba(57, 62, 70, 0.6);
+}
 
 .featured-prop {
 
@@ -59,4 +60,9 @@
 .promises {
  height: 85vh;
  background: #F2F3F4;
+}
+
+.info-card img {
+  height: 150px;
+  margin-top: 16px;
 }
