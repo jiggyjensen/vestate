@@ -5,5 +5,7 @@ class PagesController < ApplicationController
     @properties = Property.first(3)
   end
 
+  def home_developers
+  end
 end
 
