@@ -6,4 +6,14 @@ class User < ApplicationRecord
   has_many :investments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+
+  def investment_sum
+    investments.sum do |investment|
+      investment.amount
+    end
+  end
 end
+
+
