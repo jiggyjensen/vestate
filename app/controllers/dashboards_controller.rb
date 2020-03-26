@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def index
+    @solid_nav = true
     if current_user.investments.any?
     @investments = current_user.investments
     end
