@@ -32,6 +32,7 @@
     0 0 1rem rgba(0,0,0,0.2);
   text-decoration: none;
   transition: all 1.2s cubic-bezier(0.175, 0.885, 0, 1);
+  margin-bottom: 10%;
 }
 
 .card__img--hover {
@@ -55,7 +56,10 @@
 
 .card-property:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-    transform: scale(1.10, 1.10);
+  transform: scale(1.10, 1.10);
+  z-index: 10;
+  position: absolute;
+  width: 100%;
 }
 
 .card__info {
@@ -79,6 +83,10 @@
     opacity: 1;
 }
 
+
+.card-property-column {
+  min-height: 750px;
+}
 
 .border-bottom {
   border-bottom: 1px solid $grey-border;

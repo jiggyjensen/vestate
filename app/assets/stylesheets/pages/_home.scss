@@ -2,14 +2,17 @@
 
 .how-it-works {
 
-  height: 85vh;
 }
 
+.container-home {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .how-it-works h1 {
   color: #393E46;
   text-align: center;
-  margin-top: 64px;
+
 }
 
 
@@ -17,7 +20,7 @@
   color: #1FC1A1;
 }
 
-.inv-gro-yie {
+.cards-home {
   display: flex;
 
 }
@@ -35,13 +38,12 @@
   margin-left: 20px;
   margin-right: 20px;
   padding: 24px 24px 24px 24px;
-  margin-top: 100px;
   box-shadow: 5px 10px #393E46;
 }
 
 
 .featured-prop {
-  height: 85vh;
+
   background: #ced1d2;
 }
 
