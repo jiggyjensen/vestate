@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user = current_user
     if @property.save
-      redirect_to root_path
+      redirect_to property_path(@property)
     else
       render :new
     end
