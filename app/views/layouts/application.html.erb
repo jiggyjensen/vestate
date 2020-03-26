@@ -13,7 +13,7 @@
   <body>
 
 
-    <% if current_page?(root_path) || current_page?(home_developers_path) %>
+    <% if current_page?(root_path) || current_page?(home_developers_path) || current_page?(new_property_path) %>
       <div class="main-container-home">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
