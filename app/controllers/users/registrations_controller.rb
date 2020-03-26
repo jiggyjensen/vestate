@@ -6,8 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
     @solid_nav = true
+    super
   end
 
   # POST /resource

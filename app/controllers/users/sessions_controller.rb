@@ -5,8 +5,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    super
     @solid_nav = true
+    super
   end
 
   # POST /resource/sign_in

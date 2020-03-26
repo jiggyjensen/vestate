@@ -1,5 +1,6 @@
 class InvestmentsController < ApplicationController
   def new
+    @solid_nav = true
     @property = Property.find(params[:property_id])
     @investment = Investment.new
   end
