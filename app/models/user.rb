@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :saved_properties
   has_many :properties
   has_many :investments
+  validates :first_name, :last_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
