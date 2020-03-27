@@ -68,3 +68,47 @@
 .btn-secondary:hover {
   text-decoration: none;
 }
+
+.btn-secondary-home:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: #0CFFCA;
+}
+
+.btn-success-home:hover {
+  opacity: 1;
+  background-color: $green;
+  border-color: $green;
+  color: #393E46;
+  text-decoration: none;
+}
+
+.btn-success-home {
+  position: relative;
+  top: -77px;
+  right: 20px;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: $green;
+  color: #393E46;
+  border-color: $green;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+
+}
+
+.btn-secondary-home {
+  position: relative;
+  top: -77px;
+  left: 20px ;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #393E46;
+  color: #0CFFCA;
+  border-color: #0CFFCA;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+
+}
