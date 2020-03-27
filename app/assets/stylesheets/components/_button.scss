@@ -10,6 +10,15 @@
 
 }
 
+.btn-success:hover {
+  opacity: 1;
+  background-color: $green;
+  border-color: $green;
+  color: black;
+  text-decoration: none;
+
+}
+
 .btn-success-small {
   margin: 0px;
   padding-left: 2px;
@@ -25,7 +34,7 @@
   vertical-align:middle;
 }
 
-.btn-success:hover {
+.btn-success-small:hover {
   opacity: 1;
   background-color: $green;
   border-color: $green;
