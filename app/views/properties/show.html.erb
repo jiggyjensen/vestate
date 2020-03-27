@@ -10,7 +10,7 @@
 <div class="container bg-white">
 <div class="show-card bg-white">
   <div class="meter mt-3 mx-5">
-    <span class="percentage pl-4 pt-1"style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
+    <span class="pl-4 py-1 "style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
   </div>
   <h2 class="text-center border-bottom pt-3"> <%=@property.name%></h2>
 
@@ -19,21 +19,21 @@
 <div class="container bg-white">
   <div class="d-flex justify-content-around">
     <div class ="d-flex justify-content-around card-show text-center">
-      <div>
-      <h2 class="border-bottom">ROI</h2>
+      <!-- <div>
+      <!-- <h2 class="border-bottom">ROI</h2>
       <% data = [['Achieved', @property.percentage_achieved],
           ['Remaining',  (100 - @property.percentage_achieved)]] %>
 
-      <%= pie_chart data, library: { pieSliceText: 'value' } %>
+      <%= pie_chart data, library: { pieSliceText: 'value' } %> -->
       <%#= pie_chart [Property.find(params[:id]).percentage_achieved, (100- Property.find(params[:id]).percentage_achieved)]%>
 
-      </div>
+    <!--   </div> -->
       <div>
         <h2 class="border-bottom">Progress</h2>
         <% data = [['Achieved', @property.sum_amount_invested ],
           ['Remaining',  (@property.amount_to_be_raised - @property.sum_amount_invested )]] %>
 
-      <%= pie_chart data, library: { pieSliceText: 'value' } %>
+      <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4"],library: { pieSliceText: 'value' } %>
 
       </div>
     </div>
