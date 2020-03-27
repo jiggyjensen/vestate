@@ -33,7 +33,7 @@
 
 
 <div class="container-fluid container-home featured-prop">
-  <h1 class="pt-3 pb-5"> featured properties </h1>
+  <h1 class="pt-3 pb-5"> Featured Properties </h1>
   <div class="row">
     <% @properties.each do |property| %>
     <div class="col-4 mt-4">
@@ -89,9 +89,9 @@
 </div>
 
 
-<div class="container-fluid container-home">
+<div class="container-fluid container-home featured-prop">
   <div class="benefits">
-    <h1 class="py-5 text-center"> Benefits </h1>
+    <h1 class="py-5 text-center"> Key Benefits For You </h1>
     <div class="cards-home-benefits">
       <div class="info-card-benefits">
         <p> Managed for you, by experts</p>
@@ -119,7 +119,7 @@
 
 
 
-<div class="d-flex justify-content-center" >
-  <%= link_to "Invest now", properties_path, class: "btn btn-success mr-3" %>
-  <%= link_to "Raise Funds", root_path, class: "btn btn-success ml-3" %>
+<div class="d-flex justify-content-center mb-2">
+  <%= link_to "Invest now", properties_path, class: "btn-success mr-5" %>
+  <%= link_to "Raise Funds", root_path, class: "btn-secondary ml-5" %>
 </div>
