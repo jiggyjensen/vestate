@@ -63,8 +63,26 @@
   border-radius: 32px;
   font-weight: bold;
 
+
 }
 
 .btn-secondary:hover {
   text-decoration: none;
+}
+
+.width-100 {
+  width: 100% !important;
+  display: block;
+}
+
+.btn-ghost {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #393E46;
+  color: #0CFFCA;
+  border-color: #0CFFCA;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+  width: 100%;
 }

@@ -21,7 +21,7 @@ class Property < ApplicationRecord
   end
 
   def percentage_achieved
-    (sum_amount_invested.to_f / amount_to_be_raised.to_f ) * 100
+    ((sum_amount_invested.to_f / amount_to_be_raised.to_f) * 100).round
   end
 
 
