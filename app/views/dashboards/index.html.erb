@@ -14,9 +14,8 @@
         <% if current_user.investments.any? %>
           <% @investments.each do |investment| %>
               <div class="card-investment d-flex">
-                <div class="card-investment-img">
                   <% if investment.property.photo.attached? %>
-                  <%= cl_image_tag investment.property.photo.key %>
+                  <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photo) %>);">
                   <% end %>
                 </div>
                 <div class="card-investment-info text-left">
