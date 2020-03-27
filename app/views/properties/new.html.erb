@@ -1,6 +1,7 @@
-<div class="banner-new-prop text-center" style="background-image: url(https://images.unsplash.com/photo-1524475307626-b963f4b88d8f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600);">
-<div class="col-xs-12 col-md-6 offset-md-3 black_bgr">
-  <h1 class="text-center text-white">Tell us about your property</h1>
+<div class="banner-new-prop text-center" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdvallavgs%2Fimage%2Fupload%2Fv1585126402%2Fli-lin-rVWmtTXidMM-unsplash_k0qego.jpg);">
+<div class="col-xs-12 col-md-6 offset-md-3 banner-form ">
+  <div class=" black_bgr ">
+  <h1 class="text-center text-white py-4">Tell us about your property</h1>
   <%= simple_form_for @property do |f| %>
         <div class="form-inputs text-white">
     <!-- Need to find a way to make the default text as placeholders and not actual default but can come back later on it -->
@@ -12,17 +13,19 @@
     <%= f.input :valuation, input_html: { min: "0"} %>
     <!-- This doesnt show up with a downarrow and i think because in the model its not an integer (which it should be) -->
     <%= f.input :amount_to_be_raised, input_html: {min: "0"} %>
+    <%= f.input :end_date %>
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
-    <%= f.input :dividend, input_html: {min: "0"} %>
+
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
     <%= f.input :financials, input_html: { placeholders: 'Input some text about the property cost, development etc breakdown of costs and returns'} %>
     <%= f.input :photos, as: :file, input_html: { placeholders: 'Add some images'} %>
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
   </div>
 
-    <%= f.submit "Submit", class: "btn-success w-100 mb-3 mt-0" %>
-    <%= link_to "Go back", root_path, class: "btn-success w-100 mb-3"%>
+    <%= f.submit "Submit", class: "btn-success w-100 mt-0" %>
+    <%= link_to "Go back", root_path, class: "btn-secondary w-100 mb-3 d-block"%>
 
  <% end %>
+ </div>
   </div>
 </div>

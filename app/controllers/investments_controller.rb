@@ -18,6 +18,7 @@ class InvestmentsController < ApplicationController
       flash[:alert] = "Please accept the terms and conditions"
     end
   end
+
 private
 def investments_params
   params.require(:investment).permit(:amount, :terms_accepted)
