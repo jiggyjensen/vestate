@@ -2,8 +2,8 @@
   <div class="container do-it">
     <h1>Why do it <strong>alone</strong> ?</h1>
     <p>We’ve made property investing easier for you.</p>
-    <%= link_to "apply now", '/properties', class: 'btn-success' %>
-    <%= link_to "raise funds", home_developers_path, class: 'btn-secondary' %>
+    <%= link_to "Invest now", '/properties', class: 'btn-success-home' %>
+    <%= link_to "Raise funds", home_developers_path, class: 'btn-secondary-home' %>
   </div>
 </div>
 
@@ -33,7 +33,7 @@
 
 
 <div class="container-fluid container-home featured-prop">
-  <h1 class="pt-3 pb-5"> featured properties </h1>
+  <h1 class="pt-3 pb-5"> Featured Properties </h1>
   <div class="row">
     <% @properties.each do |property| %>
     <div class="col-4 mt-4">
@@ -50,7 +50,7 @@
         </div>
         <br>
         <div class="meter">
-          <span class="percentage pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
+          <span class="pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
         </div>
         <div class="card__info">
           <div>
@@ -89,9 +89,9 @@
 </div>
 
 
-<div class="container-fluid container-home">
+<div class="container-fluid container-home featured-prop">
   <div class="benefits">
-    <h1 class="py-5 text-center"> Benefits </h1>
+    <h1 class="py-5 text-center"> Key Benefits For You </h1>
     <div class="cards-home-benefits">
       <div class="info-card-benefits">
         <p> Managed for you, by experts</p>
@@ -119,7 +119,7 @@
 
 
 
-<div class="d-flex justify-content-center" >
-  <%= link_to "Invest now", properties_path, class: "btn btn-success mr-3" %>
-  <%= link_to "Raise Funds", root_path, class: "btn btn-success ml-3" %>
+<div class="d-flex justify-content-center mb-2">
+  <%= link_to "Invest now", properties_path, class: "btn-success mr-5" %>
+  <%= link_to "Raise Funds", home_developers_path, class: "btn-secondary ml-5" %>
 </div>

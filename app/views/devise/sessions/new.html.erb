@@ -1,8 +1,10 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+<div class="banner-new-prop banner-login text-center" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdvallavgs%2Fimage%2Fupload%2Fv1585126402%2Fli-lin-rVWmtTXidMM-unsplash_k0qego.jpg);">
+<div class="col-xs-12 col-md-6 offset-md-3">
+  <div class=" black_bgr ">
+  <h1 class="text-center text-white">Log in</h1>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs text-white">
+   <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
@@ -12,9 +14,16 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+    <%= f.submit "Log in", class: "btn-success w-100 mt-0" %>
 
-<%= render "devise/shared/links" %>
+
+ <% end %>
+ <%= render "devise/shared/links" %>
+ </div>
+  </div>
+</div>
+
+
+
+
+

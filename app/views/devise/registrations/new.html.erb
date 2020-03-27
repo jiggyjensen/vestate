@@ -1,4 +1,44 @@
-<h2>Sign up</h2>
+<div class="banner-new-prop text-center" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdvallavgs%2Fimage%2Fupload%2Fv1585126402%2Fli-lin-rVWmtTXidMM-unsplash_k0qego.jpg);">
+<div class="col-xs-12 col-md-6 offset-md-3">
+  <div class=" black_bgr ">
+  <h1 class="text-center text-white">Sign up</h1>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+        <div class="form-inputs text-white">
+    <%= f.input :first_name,
+                required: true %>
+    <%= f.input :last_name,
+                required: true %>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+    <%= f.submit "Sign up", class: "btn-success w-100 mt-0" %>
+
+
+ <% end %>
+ <%= render "devise/shared/links" %>
+ </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -27,3 +67,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+ -->

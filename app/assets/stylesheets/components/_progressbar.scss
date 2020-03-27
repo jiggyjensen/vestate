@@ -7,6 +7,8 @@
   border-radius: 25px;
   padding: 10px;
   box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .meter > span {
@@ -32,7 +34,5 @@
   overflow: hidden;
 }
 
-.percentage {
-  font-family: 'Georgia';
-}
+
 
