@@ -1,18 +1,31 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1472224371017-08207f84aaae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
-  <div class="container">
-    <h1><strong>My Dashboard (coming soon!)</strong></h1>
-  </div>
+<div class="hero">
+    <h1>My Portfolio</h1>
 </div>
-  <div class="container-home">
-    <div class="p-2 border rounded h-100 d-flex flex-column text-center justify-content-between">
-      Total currently invested: <%= current_user.investment_sum %> €
+<div class="text-center">
+    <div class="info">
+      <h3>Total currently invested:</h3><p><%= current_user.investment_sum %> €</p>
     </div>
-      <br>
-      <% if current_user.investments.any? %>
-        <% @investments.each do |investment| %>
-        <%= investment.amount %>
-        <%= investment.property.name %>
-        <%= investment.property.location %>
+</div>
+
+    <div class="investment-banner">
+      <h2>You currently have <%= current_user.investments.count %> properties in your portfolio</h2>
+    </div>
+
+        <% if current_user.investments.any? %>
+          <% @investments.each do |investment| %>
+              <div class="card-investment d-flex">
+                <div class="card-investment-img">
+                  <% if investment.property.photo.attached? %>
+                  <%= cl_image_tag investment.property.photo.key %>
+                  <% end %>
+                </div>
+                <div class="card-investment-info text-left">
+                  <h2><%= investment.property.name %></h2>
+                  <p>Currently invested: <%= investment.amount %> €</p>
+                  <p>Location: <%= investment.property.location %></p>
+                </div>
+              </div>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
+
+
