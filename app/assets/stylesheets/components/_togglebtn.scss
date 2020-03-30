@@ -1,0 +1,59 @@
+$green: #3dbf87;
+$red: #FC3164;
+
+
+$animtime: 1.5s;
+$easing: cubic-bezier(0.68, -0.15, 0.265, 1.35);
+$iteration: 1;
+
+.background {
+  width: 15vw;
+  height: 15vh;
+  position: relative;
+  background: transparent;
+  transition: 1.5s $easing;
+  margin: auto;
+}
+.background--on {
+  background: transparent;
+  transition: 1.5s $easing;
+}
+.toggle-body {
+  width: 5rem;
+  height: 2.75rem;
+  position: absolute;
+  top: calc(50% - 4rem / 2);
+  left: calc(50% - 7rem / 2);
+  background: white;
+  border-radius: 2rem;
+  transform: rotate(0deg);
+  transition: $animtime $easing;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+
+}
+.toggle-body--on {
+  transform: rotate(180deg);
+  transition: $animtime $easing;
+}
+.toggle-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: calc(50% - 1.5rem / 2);
+  left: calc(27% - 1.5rem / 2);
+  background: white;
+  border-radius: 1.5rem;
+  background: #393E46;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transform-origin: 130% 115%;
+  transition: $animtime $easing;
+}
+.toggle-btn--on {
+  transition: $animtime $easing;
+  transform: rotate(-357deg);
+  background: #0CFFCA;
+  transform-origin: 130% 150%;
+}
+
