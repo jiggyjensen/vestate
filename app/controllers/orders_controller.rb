@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new
+    @solid_nav = true
     order = Order.new
     @investment = Investment.find(params[:investment_id])
   end
