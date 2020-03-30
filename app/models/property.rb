@@ -2,7 +2,7 @@ class Property < ApplicationRecord
   belongs_to :user
   has_many :investments
   validates :name, :location, :description, :amount_to_be_raised, presence: true
-  has_one_attached :photo
+  has_many_attached :photos
   has_many_attached :documents
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
