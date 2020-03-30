@@ -16,7 +16,7 @@ class Property < ApplicationRecord
   def sum_amount_invested
     total_amount_invested = 0
     self.investments.each do |investment|
-      total_amount_invested += investment.amount
+      total_amount_invested += investment.amount.to_i
     end
     total_amount_invested
   end
