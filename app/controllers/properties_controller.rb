@@ -40,7 +40,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @solid_nav = true
     @property = Property.find(params[:id])
     @markers = [{
 
@@ -55,7 +54,7 @@ class PropertiesController < ApplicationController
 private
 
 def property_params
-    params.require(:property).permit(:name, :location, :description, :area_description, :valuation, :amount_to_be_raised, :dividend, :financials, :end_date, :photo)
+    params.require(:property).permit(:name, :location, :description, :area_description, :valuation, :amount_to_be_raised, :dividend, :financials, :end_date, :photo, documents: [])
 end
 
 end
