@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_090607) do
+ActiveRecord::Schema.define(version: 2020_03_30_142404) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_03_30_090607) do
     t.index ["user_id"], name: "index_investments_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "property_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_likes_on_property_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "state"
     t.string "checkout_session_id"
@@ -63,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_090607) do
   create_table "properties", force: :cascade do |t|
     t.string "sales_proceeds"
     t.string "location"
-    t.string "valuation"
+    t.integer "valuation"
     t.string "name"
     t.string "description"
     t.integer "amount_to_be_raised"
@@ -114,6 +124,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_090607) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "properties"
   add_foreign_key "investments", "users"
+  add_foreign_key "likes", "properties"
+  add_foreign_key "likes", "users"
   add_foreign_key "orders", "investments"
   add_foreign_key "orders", "users"
   add_foreign_key "properties", "users"

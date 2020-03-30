@@ -47,4 +47,23 @@
       <% end %>
      <% end %>
 
+     <% if current_user.liked_properties.any? %>
+      <h1>My Favorites Properties</h1>
+        <% current_user.liked_properties.each do |property| %>
+          <div class="card-investment d-flex">
+            <% if property.photo.attached? %>
+            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photo) %>);">
+            <% end %>
+            </div>
+          <div class="card-investment-info text-left">
+            <h2><%= property.name %></h2>
+            <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
+            <p>Location: <%= property.location %></p>
+          </div>
+         </div>
+      <% end %>
+     <% end %>
+
+
+
 
