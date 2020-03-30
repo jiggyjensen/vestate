@@ -40,7 +40,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @solid_nav = true
     @property = Property.find(params[:id])
     @markers = [{
 
