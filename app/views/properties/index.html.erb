@@ -38,7 +38,7 @@
               <% if property.photos.attached? %>
 
 
-            <div class="card-property-img card-property-img--hover"><%= image_tag property.photos[0] %>
+            <div class="card-property-img card-property-img--hover"><%= image_tag property.photos[0] %></div>
             <% else %>
             <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img"%>
             <% end %>
