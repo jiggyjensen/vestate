@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :saved_properties, dependent: :destroy
   has_many :properties, dependent: :destroy
   has_many :investments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_properties, through: :likes, source: :property
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
