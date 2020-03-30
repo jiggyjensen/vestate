@@ -13,7 +13,7 @@
   <body>
 
 
-    <% if current_page?(root_path) || current_page?(home_developers_path) || current_page?(new_property_path) || (params[:controller] == 'properties' && params[:action] == 'show') || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || (params[:controller] ==  'users/sessions' && params[:action] == 'create') || current_page?(dashboards_path) %>
+    <% if current_page?(root_path) || current_page?(home_developers_path) || current_page?(new_property_path) || (params[:controller] == 'properties' && params[:action] == 'show') || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || (params[:controller] ==  'users/sessions' && params[:action] == 'create') || current_page?(dashboards_path) || (params[:controller] ==  'users/registrations' && params[:action] == 'create') %>
       <div class="main-container-home">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
