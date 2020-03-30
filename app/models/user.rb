@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :saved_properties
   has_many :properties
   has_many :investments
+  has_many :orders
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

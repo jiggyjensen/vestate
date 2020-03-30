@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_114654) do
+ActiveRecord::Schema.define(version: 2020_03_30_090607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,14 +38,26 @@ ActiveRecord::Schema.define(version: 2020_03_25_114654) do
 
   create_table "investments", force: :cascade do |t|
     t.date "entry_date"
-    t.integer "amount"
     t.date "exit_date"
     t.bigint "user_id"
     t.bigint "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
     t.index ["property_id"], name: "index_investments_on_property_id"
     t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "checkout_session_id"
+    t.bigint "user_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.bigint "investment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["investment_id"], name: "index_orders_on_investment_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -102,6 +114,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_114654) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "properties"
   add_foreign_key "investments", "users"
+  add_foreign_key "orders", "investments"
+  add_foreign_key "orders", "users"
   add_foreign_key "properties", "users"
   add_foreign_key "saved_properties", "properties"
   add_foreign_key "saved_properties", "users"
