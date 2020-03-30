@@ -37,12 +37,17 @@
 
 
 .banner-show {
-  height: 450px;
-  width: 100%;
   background-size: cover;
   background-position: center;
   margin-bottom: 15px;
   position: relative;
+  max-height: 500px;
+
+}
+
+.banner-show-img {
+  max-height: 500px;
+  object-fit: cover;
 
 }
 
@@ -74,7 +79,6 @@
 }
 
 .banner-new-prop {
-
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -124,4 +128,9 @@
   margin-bottom: 15px;
   position: relative;
   height: 250px;
+}
+
+.text-banner {
+  margin: 0 auto;
+  width: 100px;
 }

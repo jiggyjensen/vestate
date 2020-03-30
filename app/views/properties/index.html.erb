@@ -32,8 +32,8 @@
             <% end %>
           <% end %>
           <div class="img-hover-zoom">
-            <% if property.photo.attached? %>
-            <div class="card-property-img card-property-img--hover" style="background-image: url(<%= cl_image_path property.photo.key %>) "></div>
+            <% if property.photos.attached? %>
+            <div class="card-property-img card-property-img--hover"><%= image_tag property.photos[0] %>
             <% else %>
             <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img"%>
             <% end %>
