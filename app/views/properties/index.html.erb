@@ -18,53 +18,68 @@
     </div>
   </div>
 </div>
-  <div class="row">
-    <% @properties.each do |property| %>
-    <div class="col-4 mt-4 card-property-column">
-      <%= link_to property_path(property) do  %>
-      <div class="card-property">
-        <div class="card__info-hover">
-          <%= link_to property_likes_path(property), class: "card__like", method: :post do %>
+
+<div class='index-container d-flex flex-column align-items-center' style='position: relative; min-height: 80vh;'>
+  <div class="card-container">
+    <div class="row" >
+      <% @properties.each do |property| %>
+      <div class="col-4 mt-4 card-property-column">
+        <%= link_to property_path(property) do  %>
+        <div class="card-property">
+          <div class="card__info-hover">
+            <%= link_to property_likes_path(property), class: "card__like", method: :post do %>
             <% if user_signed_in? && property.likes.where(user_id: current_user).any?# # la property a ét élike %>
               <i class="fas fa-heart" style="color:#f62928;"></i>
             <% else %>
               <i class="far fa-heart" style="color:#f62928;"></i>
             <% end %>
           <% end %>
-          <div class="img-hover-zoom">
-            <% if property.photos.attached? %>
+            <div class="img-hover-zoom">
+              <% if property.photos.attached? %>
+              
+
             <div class="card-property-img card-property-img--hover"><%= image_tag property.photos[0] %>
             <% else %>
             <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img"%>
             <% end %>
-          </div>
-          <h5 class="card-description text-center my-auto"><%= property.name %></h5>
-        </div>
-        <br>
-            <div class="meter">
-              <span class="percentage pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
+
             </div>
-        <div class="card__info">
-          <div class="card-see-more text-center">
-            <p class="user-name">Developer: <%= property.user.first_name + " " + property.user.last_name %></p>
+            <h5 class="card-description text-center my-auto"><%= property.name %></h5>
           </div>
-          <div>
-            <p class="location text-center">Location: <%= property.location %></p>
-            <p class='name'>Description: <%= property.description %></p>
+          <br>
+              <div class="meter">
+                <span class="percentage pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
+              </div>
+          <div class="card__info">
+            <div class="card-see-more text-center">
+              <p class="user-name">Developer: <%= property.user.first_name + " " + property.user.last_name %></p>
+            </div>
+            <div>
+              <p class="location text-center">Location: <%= property.location %></p>
+              <p class='name'>Description: <%= property.description %></p>
+            </div>
           </div>
+          <span class="btn btn-property text-center">VIEW DETAILS</span>
         </div>
-        <span class="btn btn-property text-center">VIEW DETAILS</span>
+        <% end %>
       </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-      <% end %>
-    </div>
-  </div>
 
-
-    <div
+    <div class="map-container">
+     <div
     id="map"
     class="show-map card-show"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    style='height: 80vh; width: 80vw;'
     ></div>
+  </div>
+</div>
+
+</div>
+<%# else %>
+
+<%# end %>
+
