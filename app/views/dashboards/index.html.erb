@@ -14,8 +14,8 @@
         <% if current_user.investments.any? %>
           <% @investments.each do |investment| %>
               <div class="card-investment d-flex">
-                  <% if investment.property.photo.attached? %>
-                  <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photo) %>);">
+                  <% if investment.property.photos.attached? %>
+                  <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photos.first) %>);">
                   <% end %>
                   </div>
                 <div class="card-investment-info text-left">
@@ -34,8 +34,8 @@
       <% if current_user.properties.any? %>
         <% current_user.properties.each do |property| %>
           <div class="card-investment d-flex">
-            <% if property.photo.attached? %>
-            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photo) %>);">
+            <% if property.photos.attached? %>
+            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
             <% end %>
             </div>
           <div class="card-investment-info text-left">
@@ -51,8 +51,8 @@
       <h1>My Favorites Properties</h1>
         <% current_user.liked_properties.each do |property| %>
           <div class="card-investment d-flex">
-            <% if property.photo.attached? %>
-            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photo) %>);">
+            <% if property.photos.attached? %>
+            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
             <% end %>
             </div>
           <div class="card-investment-info text-left">
