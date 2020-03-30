@@ -55,7 +55,7 @@
     position: absolute;
 }
 
-.card-descritpion:hover {
+.card-description:hover {
   text-decoration: none;
 }
 
@@ -70,6 +70,7 @@
 
 .card__info {
   background-color: #333;
+  color: white;
   padding: 30px;
   text-align: center;
   text-decoration: none;
@@ -77,12 +78,14 @@
 
 .card-property-img .card-property-img--hover {
   transition: transform .9s ease;
+  text-decoration: none;
 }
 
 .card-property:hover .card-property-img--hover {
     transform: scale(1.8, 1.8);
     background-size: cover;
     opacity: 0.6;
+    text-decoration: none;
 
 }
 

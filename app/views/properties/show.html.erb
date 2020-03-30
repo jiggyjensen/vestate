@@ -1,68 +1,95 @@
 
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(<%= url_for(@property.photo) %>);">
-  <div class="days-banner">
-    <p><%=@property.days_left%> days left</p>
-  </div>
-  <div class=" button-banner-show text-center">
-  <%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
+<div class="banner-show">
+ <% if @property.photos.attached? %>
+ <div id="carousel-<%= @property.id %>" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% @property.photos.each_with_index do |photo, index| %>
+    <li data-target="#carousel-<%= @property.id %>" data-slide-to="0" class="<%= "active" if index == 0 %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% @property.photos.each_with_index do |photo, index| %>
+    <div class="carousel-item <%= "active" if index == 0 %>">
+      <%= cl_image_tag photo.key, alt: "Image of the property", class: "banner-show-img w-100" %>
+    </div>
+    <% end %>
+    <a class="carousel-control-prev" href="#carousel-<%= @property.id %>" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-<%= @property.id %>" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </div>
-<div class="container bg-white">
-<div class="show-card bg-white">
-  <div class="meter mt-3 mx-5">
-    <span class="pl-4 py-1 "style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
-  </div>
-  <h2 class="text-center border-bottom pt-3"> <%=@property.name%></h2>
+<% else %>
+<%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img d-block w-100"%>
+<% end %>
+</div>
 
-  <p class=" text-center border-bottom mx-5"> <%=@property.description%></p>
+<div class="days-banner">
+  <p><%=@property.days_left%> days left</p>
+</div>
+<div class=" button-banner-show text-center">
+  <%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
 </div>
 <div class="container bg-white">
-  <div class="d-flex justify-content-around">
-    <div class ="d-flex justify-content-around card-show text-center">
+  <div class="show-card bg-white">
+    <div class="meter mt-3 mx-5">
+      <span class="pl-4 py-1 "style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
+    </div>
+    <h2 class="text-center border-bottom pt-3"> <%=@property.name%></h2>
+
+    <p class=" text-center border-bottom mx-5"> <%=@property.description%></p>
+  </div>
+  <div class="container bg-white">
+    <div class="d-flex justify-content-around">
+      <div class ="d-flex justify-content-around card-show text-center">
       <!-- <div>
       <!-- <h2 class="border-bottom">ROI</h2>
       <% data = [['Achieved', @property.percentage_achieved],
           ['Remaining',  (100 - @property.percentage_achieved)]] %>
 
-      <%= pie_chart data, library: { pieSliceText: 'value' } %> -->
-      <%#= pie_chart [Property.find(params[:id]).percentage_achieved, (100- Property.find(params[:id]).percentage_achieved)]%>
+          <%#= pie_chart data, library: { pieSliceText: 'value' } %> -->
+          <%#= pie_chart [Property.find(params[:id]).percentage_achieved, (100- Property.find(params[:id]).percentage_achieved)]%>
 
-    <!--   </div> -->
-      <div>
-        <h2 class="border-bottom">Progress</h2>
-        <% data = [['Achieved', @property.sum_amount_invested ],
-          ['Remaining',  (@property.amount_to_be_raised - @property.sum_amount_invested )]] %>
+          <!--   </div> -->
+          <div>
+            <h2 class="border-bottom">Progress</h2>
+            <% data = [['Achieved', @property.sum_amount_invested ],
+            ['Remaining',  (@property.amount_to_be_raised - @property.sum_amount_invested )]] %>
 
-      <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4"],library: { pieSliceText: 'value' } %>
+            <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4"],library: { pieSliceText: 'value' } %>
 
+          </div>
+        </div>
+        <div class="card-show text-center">
+          <h3 class="border-bottom">Download documents</h3>
+          <div><%= link_to "Title Plan", asset_path("Title-Plan.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div><%= link_to "Title Register", asset_path("Title Register.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div><%= link_to "Market Research Report", asset_path("Market Research Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div><%= link_to "Valuation Report", asset_path("Valuation Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <% @property.documents.each do |doc| %>
+          <div><%= link_to doc.filename, cloudinary_url(doc.key) %> <i class="fas fa-external-link-alt"></i></div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="card-show text-center">
-      <h3 class="border-bottom">Download documents</h3>
-      <div><%= link_to "Title Plan", asset_path("Title-Plan.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <div><%= link_to "Title Register", asset_path("Title Register.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <div><%= link_to "Market Research Report", asset_path("Market Research Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <div><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <div><%= link_to "Valuation Report", asset_path("Valuation Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <div><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-      <% @property.documents.each do |doc| %>
-      <div><%= link_to doc.filename, cloudinary_url(doc.key) %> <i class="fas fa-external-link-alt"></i></div>
-      <% end %>
-    </div>
-  </div>
-  <div class="d-flex justify-content-between">
-    <div class=" card-show">
-      <p class="text-center border-bottom"> <%=@property.location%></p>
-      <h3 class="p-3 text-center align-center"><%= @property.area_description%></h3>
-    </div>
-    <div
-    id="map"
-    class="show-map card-show"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-  </div>
+      <div class="d-flex justify-content-between">
+        <div class=" card-show">
+          <p class="text-center border-bottom"> <%=@property.location%></p>
+          <h3 class="p-3 text-center align-center"><%= @property.area_description%></h3>
+        </div>
+        <div
+        id="map"
+        class="show-map card-show"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
 
-</div>
-<div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
-</div>
+    </div>
+    <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
+  </div>
