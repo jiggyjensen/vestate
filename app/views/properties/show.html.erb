@@ -45,6 +45,9 @@
       <div><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf") %> <i class="fas fa-external-link-alt"></i></div>
       <div><%= link_to "Valuation Report", asset_path("Valuation Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
       <div><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+      <% @property.documents.each do |doc| %>
+      <div><%= link_to doc.filename, cloudinary_url(doc.key) %> <i class="fas fa-external-link-alt"></i></div>
+      <% end %>
     </div>
   </div>
   <div class="d-flex justify-content-between">
