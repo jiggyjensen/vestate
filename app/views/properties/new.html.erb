@@ -18,7 +18,8 @@
 
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
     <%= f.input :financials, input_html: { placeholders: 'Input some text about the property cost, development etc breakdown of costs and returns'} %>
-    <%= f.input :photos, as: :file, input_html: { placeholders: 'Add some images'} %>
+    <%= f.input :photo, as: :file, input_html: { placeholders: 'Add some images'} %>
+    <%= f.input :documents, as: :file, input_html: { multiple: true } %>
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
   </div>
 

@@ -68,7 +68,10 @@
 </div>
 
 
-<div class="container container-home">
+<div class="container container-home container-leaning d-flex">
+  <div class='leaning-man'>
+    <%= image_tag 'man-leaning.svg', class: 'img-leaning' %>
+  </div>
   <div class="Promises">
     <h1 class="py-5 text-center"> Our Promises To You </h1>
     <div class="info-card">
@@ -119,7 +122,8 @@
 
 
 
-<div class="d-flex justify-content-center mb-2">
-  <%= link_to "Invest now", properties_path, class: "btn-success mr-5" %>
-  <%= link_to "Raise Funds", home_developers_path, class: "btn-secondary ml-5" %>
+<div class="d-flex justify-content-center featured-prop ">
+  <%= link_to "Invest now", properties_path, class: "btn-success mr-5 mb-3" %>
+  <%= link_to "Raise Funds", home_developers_path, class: "btn-secondary ml-5 mb-3" %>
+
 </div>

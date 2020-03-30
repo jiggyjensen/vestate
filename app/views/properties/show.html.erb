@@ -1,5 +1,5 @@
 
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1555882422-3af55f50fab1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600);">
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(<%= url_for(@property.photo) %>);">
   <div class="days-banner">
     <p><%=@property.days_left%> days left</p>
   </div>
@@ -45,6 +45,9 @@
       <div><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf") %> <i class="fas fa-external-link-alt"></i></div>
       <div><%= link_to "Valuation Report", asset_path("Valuation Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
       <div><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+      <% @property.documents.each do |doc| %>
+      <div><%= link_to doc.filename, cloudinary_url(doc.key) %> <i class="fas fa-external-link-alt"></i></div>
+      <% end %>
     </div>
   </div>
   <div class="d-flex justify-content-between">
