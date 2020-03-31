@@ -44,7 +44,9 @@
             <% end %>
 
             </div>
-            <h5 class="card-description text-center my-auto"><%= property.name %></h5>
+            <div class="card-description">
+              <h5><%= property.name.truncate(70) %></h5>
+            </div>
           </div>
           <br>
               <div class="meter">
@@ -55,8 +57,8 @@
               <p class="user-name">Developer: <%= property.user.first_name + " " + property.user.last_name %></p>
             </div>
             <div>
-              <p class="location text-center">Location: <%= property.location %></p>
-              <p class='name'>Description: <%= property.description.truncate(200) %>...</p>
+              <p class="location text-center"><%= property.location %></p>
+              <p class='name text-justify'><%= property.description.truncate(220) %>...</p>
             </div>
           </div>
           <span class="btn btn-property text-center">VIEW DETAILS</span>
