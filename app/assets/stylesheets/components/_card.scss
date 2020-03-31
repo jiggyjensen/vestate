@@ -160,16 +160,11 @@
   text-align: center;
 }
 
-.card-investment img {
-  height: 100%;
-  width: 400px;
-  object-fit: cover;
-}
-
-.card-investment h2 {
-  font-size: 25px;
-  font-weight: bold;
-  margin: 0;
+.card-investment h3 {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 0;
+  text-align: left;
 }
 
 .card-investment p {
@@ -177,21 +172,31 @@
   line-height: 1.4;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #8E8E8E;
 }
 
 .card-investment .card-investment-info {
-  text-align: center;
-  padding: 16px;
+  color: black;
+  padding: 30px;
+  text-align: left;
+  text-decoration: none;
 }
 
 .card-investment {
   border: 1px solid $grey-border;
   border-radius: 4px;
   margin: 20px;
-  background-color: white;
+  background-color: #FCFFFB;
   height: 250px;
+  width: 800px;
 }
 
 .card-confirmation-payment {
   max-width: 400px;
+}
+.card-investment-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

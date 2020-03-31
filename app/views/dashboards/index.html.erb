@@ -20,19 +20,22 @@
     </div>
 
         <% if current_user.investments.any? %>
+        <div class="card-investment-container">
           <% @investments.each do |investment| %>
               <div class="card-investment d-flex">
                   <% if investment.property.photos.attached? %>
                   <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photos.first) %>);">
                   <% end %>
                   </div>
-                <div class="card-investment-info text-left">
-                  <h2><%= investment.property.name %></h2>
-                  <p>Currently invested: <%= investment.amount %> €</p>
-                  <p>Location: <%= investment.property.location %></p>
-                </div>
+                  <div class="card-investment-info text-left">
+                    <h3><%= investment.property.name %></h3>
+                      <p>Currently invested: <%= investment.amount %> €</p>
+                      <p>Location: <%= investment.property.location %></p>
+                      <p>Dividends earned: <%= investment.property.dividend %> €</p>
+                  </div>
               </div>
           <% end %>
+        </div>
         <% end %>
 
     <div class="investment-banner">
@@ -40,27 +43,46 @@
     </div>
 
       <% if current_user.properties.any? %>
-        <% current_user.properties.each do |property| %>
+        <div class="card-investment-container">
+          <% current_user.properties.each do |property| %>
+            <div class="card-investment d-flex">
+              <% if property.photos.attached? %>
+              <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
+              <% end %>
+              </div>
+            <div class="card-investment-info text-left">
+              <h3><%= property.name %></h3>
+              <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
+              <p>Location: <%= property.location %></p>
+              <p>Valuation: <%= property.valuation %></p>
+              <p>Status: <%= property.status %></p>
+            </div>
+           </div>
+        <% end %>
+      </div>
+     <% end %>
+
+    <div class="investment-banner">
+      <h2>My Favorite Properties</h2>
+    </div>
+
+     <% if current_user.liked_properties.any? %>
+      <div class="card-investment-container">
+        <% current_user.liked_properties.each do |property| %>
           <div class="card-investment d-flex">
             <% if property.photos.attached? %>
             <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
             <% end %>
             </div>
           <div class="card-investment-info text-left">
-            <h2><%= property.name %></h2>
+            <h3><%= property.name %></h3>
             <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
             <p>Location: <%= property.location %></p>
           </div>
          </div>
       <% end %>
+     </div>
      <% end %>
-
-
-
-
-
-
-
 
 <div class=" d-flex justify-content-around text-center">
 <div class="mb-5">
