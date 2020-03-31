@@ -1,6 +1,10 @@
 <div class="hero">
     <h1>My Portfolio</h1>
+    <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash' %>
+    <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash' %>
 </div>
+
+
 <div class="text-center">
     <div class="info">
       <h3>Total currently invested:</h3><p><%= current_user.investment_sum %> €</p>
