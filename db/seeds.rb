@@ -242,22 +242,22 @@ property_5.photos.attach(io: File.open("app/assets/images/property_images/Proper
 
 #M MULTIPLE PHOTOS FOR PROPERTIES CAN COME LATER
 
-# property_1.photo.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
-# property_2.photo.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
-# property_3.photo.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
-# property_4.photo.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
-# property_5.photo.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
 
-# property_1.photo.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
-# property_2.photo.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
-# property_3.photo.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
-# property_4.photo.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
-# property_5.photo.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 
-# property_1.photo.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
-# property_2.photo.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
-# property_3.photo.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
-# property_4.photo.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
-# property_5.photo.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 
 puts 'Finished!'
