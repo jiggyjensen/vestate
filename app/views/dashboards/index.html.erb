@@ -68,6 +68,20 @@
       <% end %>
      <% end %>
 
+  <%if current_user.admin %>
+  <p>validate investor profile</p>
+  <%  @investors.each do |investor|%>
+    <%= investor.email  %>
+    <%= link_to("accept", accept_investor_path(investor), method: :patch) %>
+    <%= link_to("reject", reject_investor_path(investor), method: :patch) %>
+    <% end %>
+  <p>validate developer profile</p>
+  <%  @developers.each do |developer|%>
+    <%= developer.email  %>
+    <%= link_to("accept", accept_developer_path(developer), method: :patch) %>
+    <%= link_to("reject", reject_developer_path(developer), method: :patch) %>
+    <% end %>
+  <% end %>
 
 
 
