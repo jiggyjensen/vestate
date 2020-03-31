@@ -36,7 +36,10 @@ user_1 = User.create!(
   email: "ikram@gmail.com",
   password: "123456",
   first_name: "Ikram",
-  last_name: "Akhlaq")
+  last_name: "Akhlaq",
+  admin: true,
+  validated_investor: true,
+  validated_developer: true)
 
 users << user_1
 
@@ -45,7 +48,10 @@ user_2 = User.create!(
   email: "max@gmail.com",
   password: "123456",
   first_name: "Maxime",
-  last_name: "Geurts")
+  last_name: "Geurts",
+  admin: true,
+  validated_investor: true,
+  validated_developer: true)
 
 users << user_2
 
@@ -53,7 +59,10 @@ user_3 = User.create!(
   email: "jensen@gmail.com",
   password: "123456",
   first_name: "Jensen",
-  last_name: "Daniel")
+  last_name: "Daniel",
+  admin: true,
+  validated_investor: true,
+  validated_developer: true)
 
 users << user_3
 
@@ -61,7 +70,10 @@ user_4 = User.create!(
   email: "antoine@gmail.com",
   password: "123456",
   first_name: "Antoine",
-  last_name: "Broqueville")
+  last_name: "Broqueville",
+  admin: true,
+  validated_investor: true,
+  validated_developer: true)
 
 users << user_4
 
@@ -69,7 +81,10 @@ user_5 = User.create!(
   email: "claire@gmail.com",
   password: "123456",
   first_name: "Claire",
-  last_name: "Gautier")
+  last_name: "Gautier",
+  admin: true,
+  validated_investor: true,
+  validated_developer: true)
 
 users << user_5
 
