@@ -24,7 +24,6 @@
     <div class="row" >
       <% @properties.each do |property| %>
       <div class="col-4 mt-4 card-property-column">
-        <%= link_to property_path(property) do  %>
         <div class="card-property">
           <div class="card__info-hover">
             <%= link_to property_likes_path(property), class: "card__like", method: :post do %>
@@ -35,6 +34,7 @@
             <% end %>
           <% end %>
             <div class="img-hover-zoom">
+              <%= link_to property_path(property) do  %>
               <% if property.photos.attached? %>
 
 
@@ -44,7 +44,7 @@
             <% end %>
 
             </div>
-            <h5 class="card-description text-center my-auto"><%= property.name %></h5>
+            <h5 class="card-description text-center text-white my-auto"><%= property.name %></h5>
           </div>
           <br>
               <div class="meter">
@@ -63,7 +63,7 @@
         </div>
         <% end %>
       </div>
-        <% end %>
+    <% end %>
       </div>
     </div>
 
@@ -79,7 +79,4 @@
 </div>
 
 </div>
-<%# else %>
-
-<%# end %>
 
