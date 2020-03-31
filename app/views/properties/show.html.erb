@@ -3,6 +3,13 @@
  <% if @property.photos.attached? %>
  <div id="carousel-<%= @property.id %>" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
+    <div class='circle-days-left'>
+      <% if @property.days_left >= 0 %>
+        <div class='days-left-new'><%= @property.days_left %> days left!</div>
+      <% else %>
+        <div class='days-left-new'> No days left!</div>
+      <% end %>
+    </div>
     <% @property.photos.each_with_index do |photo, index| %>
     <li data-target="#carousel-<%= @property.id %>" data-slide-to="0" class="<%= "active" if index == 0 %>"></li>
     <% end %>
@@ -28,9 +35,9 @@
 <% end %>
 </div>
 
-<div class="days-banner">
+<!-- <div class="days-banner">
   <p><%=@property.days_left%> days left</p>
-</div>
+</div> -->
 <div class=" button-banner-show text-center">
   <%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
 </div>
@@ -79,8 +86,8 @@
       </div>
       <div class="d-flex justify-content-between">
         <div class=" card-show">
-          <p class="text-center border-bottom"> <%=@property.location%></p>
-          <h3 class="p-3 text-justify align-center"><%= @property.area_description%></h3>
+          <h3 class="text-center border-bottom"> <%=@property.location%></h3>
+          <p class="p-4 text-justify align-center"><%= @property.area_description%></p>
         </div>
         <div
         id="map"
