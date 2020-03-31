@@ -1,13 +1,21 @@
 
-<div class="container">
-  <div class="row py-4">
-<!-- <div class="col-md-3"><%#= image_tag @order.investment.property.photo.key, width: '100%' %></div> -->
-     <div class="col">
+<div class="container bg-white text-center">
+  <div class="row justify-content-around px-auto py-4">
+    <div class="col-6 card-confirmation-payment text-center">
+      <h2 class="">Property Summary</h2>
+      <p><%=@order.investment.property.name%></p>
+      <p><%=@order.investment.property.location%></p>
+      <button class="btn-secondary w-100">View documentation</button>
+
+      <p></p>
+    </div>
+     <div class="col-6 card-confirmation-payment">
       <div class="d-flex justify-content-center">
-      <div class="confirmation-page">
-        <h1>Property summary</h1>
-        <p>Purchase of <strong><%= @order.investment.property.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-        <button id="pay" class="btn btn-primary">Pay</button>
+      <div class="text-center">
+        <h2>Payment Summary</h2>
+        <p><%=@order.investment.property.user.first_name%> <%=@order.investment.property.user.last_name%></p>
+        <p>Investment of <strong><%= @order.investment.property.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+        <button id="pay" class="btn-success w-100">Pay</button>
         <script src="https://js.stripe.com/v3/"></script>
         <script>
           const paymentButton = document.getElementById('pay');
@@ -20,11 +28,12 @@
         </script>
       </div>
       <div>
-        <h1>Payment Summary</h1>
+
       </div>
       <!-- </div> -->
     </div>
   </div>
+</div>
 </div>
 
 

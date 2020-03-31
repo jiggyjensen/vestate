@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+     @solid_nav = true
     @order = current_user.orders.find(params[:id])
   end
 end
