@@ -89,6 +89,7 @@
   <%if current_user.admin %>
 
 <div class="card-investment">
+
   <h2 class="mt-4">Validate Investors</h2>
   <%  @investors.each do |investor|%>
   <div class="d-flex justify-content-between m-3">
@@ -101,6 +102,7 @@
     <%= link_to("accept", accept_investor_path(investor), method: :patch, class: "accept-btn") %>
     <%= link_to("reject", reject_investor_path(investor), method: :patch, class: "reject-btn") %>
     </div>
+
   </div>
     <% end %>
   </div>
