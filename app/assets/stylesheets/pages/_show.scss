@@ -52,6 +52,23 @@
   position: relative;
 }
 
+
+.no-decoration a {
+
+  text-decoration: none;
+
+}
+
+.img-download img {
+  width: 168px;
+  margin: auto;
+  position: absolute;
+  top: 235px;
+  right: 177px;
+  display: block;
+}
+
+
 .custom-range::-webkit-slider-thumb {
   background: #1FC1A1;
 }
@@ -62,4 +79,29 @@
 
 .custom-range::-ms-thumb {
   background: #1FC1A1;
+}
+
+.btn-test {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #1FC1A1;
+  color: $dark-grey;
+  border-color: #1FC1A1;
+  opacity: 0.9;
+  border-radius: 32px;
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.btn-test:hover {
+  opacity: 1;
+  background-color: #1FC1A1;
+  border-color: #1FC1A1;
+  color: $dark-grey;
+  text-decoration: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
 }
