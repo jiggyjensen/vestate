@@ -51,37 +51,47 @@
       <% end %>
      <% end %>
 
-     <% if current_user.liked_properties.any? %>
-      <h1>My Favorites Properties</h1>
-        <% current_user.liked_properties.each do |property| %>
-          <div class="card-investment d-flex">
-            <% if property.photos.attached? %>
-            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
-            <% end %>
-            </div>
-          <div class="card-investment-info text-left">
-            <h2><%= property.name %></h2>
-            <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
-            <p>Location: <%= property.location %></p>
-          </div>
-         </div>
-      <% end %>
-     <% end %>
 
+
+
+
+
+
+
+<div class=" d-flex justify-content-around text-center">
+<div class="mb-5">
   <%if current_user.admin %>
-  <p>validate investor profile</p>
+
+<div class="card-investment">
+  <h2 class="mt-4">Validate Investor Profile</h2>
   <%  @investors.each do |investor|%>
+  <div class=" m-3">
+    <%= investor.first_name %>
+    <%= investor.last_name  %>
     <%= investor.email  %>
-    <%= link_to("accept", accept_investor_path(investor), method: :patch) %>
-    <%= link_to("reject", reject_investor_path(investor), method: :patch) %>
+    <%= link_to("accept", accept_investor_path(investor), method: :patch, class: "accept-btn") %>
+    <%= link_to("reject", reject_investor_path(investor), method: :patch, class: "reject-btn") %>
+  </div>
     <% end %>
-  <p>validate developer profile</p>
+  </div>
+</div>
+
+
+<div>
+
+  <div class="card-investment">
+    <h2 class="mt-4">Validate Developer Profile</h2>
   <%  @developers.each do |developer|%>
+  <div class="m-3">
+    <%= developer.first_name %>
+    <%= developer.last_name  %>
     <%= developer.email  %>
-    <%= link_to("accept", accept_developer_path(developer), method: :patch) %>
-    <%= link_to("reject", reject_developer_path(developer), method: :patch) %>
+    <%= link_to("accept", accept_developer_path(developer), method: :patch, class: "accept-btn") %>
+    <%= link_to("reject", reject_developer_path(developer), method: :patch, class: "reject-btn") %>
+  </div>
     <% end %>
   <% end %>
-
-
+</div>
+</div>
+</div>
 
