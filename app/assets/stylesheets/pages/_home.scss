@@ -36,9 +36,11 @@
 }
 
 
+
 .info-card {
   border: 1px solid $dark-green;
   border-radius: 16px;
+  width: 400px;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
@@ -50,16 +52,29 @@
   box-shadow: 5px 4px 7px rgba(57, 62, 70, 0.6);
 }
 
+.info-card-promise {
+  border: 1px solid $dark-green;
+  border-radius: 16px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 24px 24px 24px 24px;
+  box-shadow: 0px 0px $dark-green;
+}
+
+.info-card-promise:hover {
+  box-shadow: 5px 4px 7px rgba(57, 62, 70, 0.6);
+}
+
 .featured-prop {
 
-  background: #ced1d2;
+  background: $home-grey;
 }
 
 .featured-prop h1 {
   text-align: center;
 }
 .promises {
- height: 85vh;
  background: #F2F3F4;
 }
 
@@ -72,7 +87,7 @@
 .container-home-color {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #ced1d2;
+  background-color: $home-grey;
 }
 
 .benefits h1{
@@ -108,6 +123,11 @@
 .info-card h3 {
   color: #1FC1A1;
 }
+
+.info-card-promise h3 {
+  color: #1FC1A1;
+}
+
 .info-card img {
   height: 150px;
   margin-top: 16px;
@@ -117,11 +137,10 @@
 
 .leaning-man {
   width: 20%;
-  height: 100%;
   overflow: hidden;
   position: relative;
   left: -190px;
-  top: -100px;
+  top: -150px;
 }
 
 .leaning-woman {
