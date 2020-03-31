@@ -1,7 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dvallavgs/image/upload/v1585126355/boban-simonovski-qkJ8sTSg0hk-unsplash_cdho3c.jpg);">
   <div class="container do-it">
-    <h1>Why do it <strong>alone</strong> ?</h1>
-    <p>We’ve made property investing easier for you.</p>
+    <h1 class="mb-5" >Why Do It <strong>Alone</strong> ?</h1>
+    <p class="mb-0"> We've made property investing easier for you</p>
+    <p class="mt-0"> Begin your property investment portfolio with as little as £100</p>
     <%= link_to "Invest now", '/properties', class: 'btn-success-home' %>
     <%= link_to "Raise funds", home_developers_path, class: 'btn-secondary-home' %>
   </div>
@@ -9,21 +10,21 @@
 
 <div class="container container-home">
   <div class="how-it-works">
-    <h1 class="py-5"> How Does It Work ? </h1>
-    <div class="cards-home">
+    <h1 class="pt-3 pb-5"> How Does It Work ? </h1>
+    <div class="cards-home mb-5">
       <div class="info-card">
         <h3> Invest </h3>
-        <p> Buy shares in income producing property investments from £100. Choose how many shares you wish to own in any available investment!</p>
+        <p> Buy shares in income producing property investments from £100. Choose how many shares you wish to own in any available properties</p>
         <%= image_tag 'invest-now.svg' %>
       </div>
       <div class="info-card" id="grow">
         <h3> Grow </h3>
-        <p> As property prices grow so does the value of your shares. Track the movements from your online portfolio.</p>
+        <p> As property prices grow so does the value of your shares. Track the movements from your online portfolio</p>
         <%= image_tag 'invest-grow.svg' %>
       </div>
       <div class="info-card">
         <h3> Earn </h3>
-        <p>Receive your share of the rental income in the form of monthly dividends if there are profits, and a share of any sale proceeds upon exit.</p>
+        <p>Receive your share of the rental income in the form of monthly dividends if there are profits, and a share of any sale proceeds upon exit</p>
         <%= image_tag 'invest-goal.svg' %>
       </div>
     </div>
@@ -68,23 +69,23 @@
 </div>
 
 
-<div class="container container-home container-leaning d-flex">
-  <div class='leaning-man'>
+<div class="container container-home d-flex position-relative">
+  <div class='leaning-man position-absolute'>
     <%= image_tag 'man-leaning.svg', class: 'img-leaning' %>
   </div>
-  <div class="Promises">
-    <h1 class="py-5 text-center"> Our Promises To You </h1>
-    <div class="info-card">
+  <div class="Promises text-center">
+    <h1 class="pt-3 pb-5 text-center"> Our Promises To You </h1>
+    <div class="info-card-promise">
       <h3> Transparency and Honesty </h3>
       <p> We are upfront and honest with our fees, costs associated with your investment </p>
     </div>
     <br>
-    <div class="info-card">
-      <h3> We know what we are listing </h3>
+    <div class="info-card-promise">
+      <h3> We understand the investments we list </h3>
       <p> The properties we list, are vetted by our in house experts and we use outsourced valuation providers to double check we havent missed anything </p>
     </div>
     <br>
-    <div class="info-card">
+    <div class="info-card-promise">
       <h3> Guidance, soundboard . . . trusted partner </h3>
       <p> We provide you with legal documentation so you don't need to worry about your ownership. We help guide you through your investment, every step of the way </p>
     </div>
@@ -92,9 +93,9 @@
 </div>
 
 
-<div class="container-fluid container-home featured-prop">
+<div class="container-fluid container-home featured-prop ">
   <div class="benefits">
-    <h1 class="py-5 text-center"> Key Benefits For You </h1>
+    <h1 class="pt-3 pb-5 text-center"> Key Benefits For You </h1>
     <div class="cards-home-benefits">
       <div class="info-card-benefits">
         <p> Managed for you, by experts</p>
@@ -123,7 +124,7 @@
 
 
 <div class="d-flex justify-content-center featured-prop ">
-  <%= link_to "Invest now", properties_path, class: "btn-success mr-5 mb-3" %>
-  <%= link_to "Raise Funds", home_developers_path, class: "btn-secondary ml-5 mb-3" %>
+  <%= link_to "Invest now", properties_path, class: "btn-success mr-5 mb-5" %>
+  <%= link_to "Raise Funds", home_developers_path, class: "btn-secondary ml-5 mb-5" %>
 
 </div>
