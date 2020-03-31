@@ -27,4 +27,9 @@ Rails.application.routes.draw do
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/questionnaire-developers', to: 'pages#questionnaire_developers', as: :questionnaire_developers
+  get '/questionnaire-investors', to: 'pages#questionnaire_investors', as: :questionnaire_investors
+
 end
+

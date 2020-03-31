@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @investors = User.where(validated_investor: false)
   end
 
-
   def show
   end
+
 end
