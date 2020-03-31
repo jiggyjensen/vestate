@@ -7,8 +7,12 @@
     </div>
 </div>
 
+<div class="investment-chart">
+  <%= line_chart [{name: current_user.first_name, data: current_user.investments.group_by_day(:created_at).count }, {name: "All users", data: Investment.all.group_by_day(:created_at).count }] %>
+</div>
+
     <div class="investment-banner">
-      <h2>You currently have <%= current_user.investments.count %> property investments in your portfolio</h2>
+      <h2>You currently have (<%= current_user.investments.count %>) property investments in your portfolio</h2>
     </div>
 
         <% if current_user.investments.any? %>
@@ -28,7 +32,7 @@
         <% end %>
 
     <div class="investment-banner">
-      <h2>You currently have <%= current_user.properties.count %> properties in your portfolio</h2>
+      <h2>You currently have (<%= current_user.properties.count %>) properties in your portfolio</h2>
     </div>
 
       <% if current_user.properties.any? %>
