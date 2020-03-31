@@ -123,12 +123,11 @@
 }
 
 .banner-show-dashboard {
-  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 15px;
-  position: relative;
-  height: 250px;
+  height: 100%;
 }
 
 .text-banner {
