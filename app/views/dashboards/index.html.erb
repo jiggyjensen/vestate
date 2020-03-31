@@ -67,14 +67,18 @@
   <%if current_user.admin %>
 
 <div class="card-investment">
-  <h2 class="mt-4">Validate Investor Profile</h2>
+  <h2 class="mt-4">Validate Investors</h2>
   <%  @investors.each do |investor|%>
-  <div class=" m-3">
+  <div class="d-flex justify-content-between m-3">
+    <div>
     <%= investor.first_name %>
     <%= investor.last_name  %>
     <%= investor.email  %>
+    </div>
+    <div class="ml-5">
     <%= link_to("accept", accept_investor_path(investor), method: :patch, class: "accept-btn") %>
     <%= link_to("reject", reject_investor_path(investor), method: :patch, class: "reject-btn") %>
+    </div>
   </div>
     <% end %>
   </div>
@@ -84,14 +88,18 @@
 <div>
 
   <div class="card-investment">
-    <h2 class="mt-4">Validate Developer Profile</h2>
+    <h2 class="mt-4">Validate Developers</h2>
   <%  @developers.each do |developer|%>
-  <div class="m-3">
+  <div class="d-flex justify-content-between m-3">
+    <div class="">
     <%= developer.first_name %>
     <%= developer.last_name  %>
     <%= developer.email  %>
+    </div>
+    <div class="ml-5">
     <%= link_to("accept", accept_developer_path(developer), method: :patch, class: "accept-btn") %>
     <%= link_to("reject", reject_developer_path(developer), method: :patch, class: "reject-btn") %>
+    </div>
   </div>
     <% end %>
   <% end %>
