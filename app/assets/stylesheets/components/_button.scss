@@ -125,8 +125,8 @@
   position: relative;
   top: -100px;
   right: 20px;
-  margin-top: 15px;
-  padding: 12px;
+  margin-top: 20px;
+  padding: 20px;
   background-color: $green;
   color: #393E46;
   border-color: $green;
@@ -139,8 +139,8 @@
   position: relative;
   top: -100px;
   left: 20px ;
-   margin-top: 15px;
-  padding: 12px;
+   margin-top: 20px;
+  padding: 20px;
   background-color: #393E46;
   color: #0CFFCA;
   border-color: #0CFFCA;
@@ -149,4 +149,103 @@
   font-weight: bold;
 }
 
+.reject-btn {
+  margin-top: 15px;
+  padding: 3px;
+  background-color: #f62928;
+  border-color: #f62928;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+  color: $white;
+  padding-right: 8px;
+  padding-left: 8px;
 
+}
+
+.accept-btn {
+  color: $white;
+  margin-top: 15px;
+  padding: 3px;
+  background-color: #63e51d;
+  border-color: #63e51d;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+  padding-right: 8px;
+  padding-left: 8px;
+
+}
+
+.accept-btn:hover {
+  opacity: 1;
+  background-color: #63e51d;
+  border-color: #63e51d;
+  color: $white;
+  text-decoration: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.reject-btn:hover {
+  opacity: 1;
+  background-color: #f62928;
+  border-color: #f62928;
+  color: $white;
+  text-decoration: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+.btn-success-dash {
+  position: relative;
+  top: 80px;
+  right: 0px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: $green;
+  color: #393E46;
+  border-color: $green;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+}
+
+.btn-secondary-dash {
+  position: relative;
+  top: 80px;
+  left: 20px ;
+   margin-top: 20px;
+  padding: 20px;
+  background-color: #393E46;
+  color: #0CFFCA;
+  border-color: #0CFFCA;
+  opacity: 0.8;
+  border-radius: 32px;
+  font-weight: bold;
+}
+
+.btn-secondary-dash:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: #0CFFCA;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.btn-success-dash:hover {
+  opacity: 1;
+  background-color: $green;
+  border-color: $green;
+  color: $dark-grey;
+  text-decoration: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}

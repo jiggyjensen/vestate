@@ -1,6 +1,7 @@
-<div class="banner-new-prop text-center" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdvallavgs%2Fimage%2Fupload%2Fv1585126402%2Fli-lin-rVWmtTXidMM-unsplash_k0qego.jpg);">
+<div class="banner-new-prop h-100 text-center" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdvallavgs%2Fimage%2Fupload%2Fv1585126402%2Fli-lin-rVWmtTXidMM-unsplash_k0qego.jpg);">
 <div class="col-xs-12 col-md-6 offset-md-3 banner-form ">
-  <div class=" black_bgr ">
+  <div class=" black_bgr h-100 ">
+    <%if user_signed_in? && current_user.validated_developer%>
   <h1 class="text-center text-white py-4">Tell us about your property</h1>
   <%= simple_form_for @property do |f| %>
         <div class="form-inputs text-white">
@@ -25,6 +26,9 @@
     <%= link_to "Go back", root_path, class: "btn-secondary w-100 mb-3 d-block"%>
      <% end %>
   </div>
+  <% else %>
+    <p class="text-white">Your developer profile needs to be validated by the admin of the website</p>
+  <% end %>
  </div>
   </div>
 </div>
