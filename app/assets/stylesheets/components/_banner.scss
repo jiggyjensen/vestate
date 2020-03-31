@@ -84,6 +84,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  min-height: 100vh;
 
 }
 
@@ -123,15 +124,23 @@
 }
 
 .banner-show-dashboard {
-  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 15px;
-  position: relative;
-  height: 250px;
+  height: 100%;
 }
 
 .text-banner {
   margin: 0 auto;
   width: 100px;
 }
+
+}
+
+.investment-banner h2 {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 15px 0;
+}
+

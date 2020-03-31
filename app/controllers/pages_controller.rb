@@ -7,5 +7,14 @@ class PagesController < ApplicationController
 
   def home_developers
   end
+
+  def questionnaire_investors
+    @solid_nav = true
+  end
+
+  def questionnaire_developers
+    @solid_nav = true
+  end
+
 end
 

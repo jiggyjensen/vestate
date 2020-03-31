@@ -19,9 +19,17 @@ Rails.application.routes.draw do
   end
 
 
+  patch '/accept-investor/:id', to: 'users#accept_investor', as: :accept_investor
+  patch '/reject-investor/:id', to: 'users#reject_investor', as: :reject_investor
 
-
+  patch '/accept-developer/:id', to: 'users#accept_developer', as: :accept_developer
+  patch '/reject-developer/:id', to: 'users#reject_developer', as: :reject_developer
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/questionnaire-developers', to: 'pages#questionnaire_developers', as: :questionnaire_developers
+  get '/questionnaire-investors', to: 'pages#questionnaire_investors', as: :questionnaire_investors
+
 end
+
