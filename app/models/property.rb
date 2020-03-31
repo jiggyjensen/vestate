@@ -1,6 +1,7 @@
 class Property < ApplicationRecord
   belongs_to :user
   has_many :investments
+  has_many :investors, through: :investments, source: :user
   validates :name, :location, :description, :amount_to_be_raised, presence: true
   has_many_attached :photos
   has_many_attached :documents
@@ -31,4 +32,15 @@ class Property < ApplicationRecord
     (self.end_date.to_date - Date.today.to_date).to_i
   end
 
+  def equity_offered
+    (amount_to_be_raised / valuation)
+  end
+
+  def ownership_dev
+    (1 - equity_offered)
+  end
+
+  def crowd_investment
+    (equity_offered * percentage_achieved)
+  end
 end

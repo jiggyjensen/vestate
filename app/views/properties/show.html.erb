@@ -63,16 +63,17 @@
 
           <!--   </div> -->
           <div>
-            <h2 class="border-bottom">Progress</h2>
-            <% data = [['Achieved', @property.sum_amount_invested ],
-            ['Remaining',  (@property.amount_to_be_raised - @property.sum_amount_invested )]] %>
+            <h2 class="border-bottom">Ownership</h2>
+            <% data = [['Equity Developer', @property.ownership_dev ],
+            ['Crowd Equity Owned', (@property.crowd_investment)],
+            ['Crowd Equity Left',  (100 - @property.ownership_dev - @property.crowd_investment)]] %>
 
-            <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4"],library: { pieSliceText: 'value' } %>
+            <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4", "#89939E"],library: { pieSliceText: 'value' } %>
 
           </div>
         </div>
         <div class="card-show text-center">
-          <h3 class="border-bottom">Download documents</h3>
+          <h3 class="border-bottom">Download Documents</h3>
           <div><%= link_to "Title Plan", asset_path("Title-Plan.pdf") %> <i class="fas fa-external-link-alt"></i></div>
           <div><%= link_to "Title Register", asset_path("Title Register.pdf") %> <i class="fas fa-external-link-alt"></i></div>
           <div><%= link_to "Market Research Report", asset_path("Market Research Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
@@ -84,10 +85,58 @@
           <% end %>
         </div>
       </div>
+
+      <div class="d-flex justify-content-around">
+        <div class="card-show text-center">
+          <h2 class="border-bottom">Information</h2>
+          <div class='d-flex justify-content-between border-bottom pt-3'>
+            <p>Valuation</p>
+            <%= @property.valuation %>
+          </div>
+          <div class='d-flex justify-content-between border-bottom pt-3'>
+            <p>Target to be raised</p>
+            <%= @property.amount_to_be_raised %>
+          </div>
+          <div class='d-flex justify-content-between border-bottom pt-3'>
+            <p>Committed by investors</p>
+            <%= @property.sum_amount_invested %>
+          </div>
+          <div class='d-flex justify-content-between border-bottom pt-3'>
+            <p>Dividend yield</p>
+            <%= (@property.dividend / @property.valuation) %>
+          </div>
+
+        <div class='d-flex justify-content-between border-bottom pt-3'>
+          <p>Number of investors</p>
+          <%= @property.investors.uniq.count %>
+        </div>
+      </div>
+      <div class="card-show text-center">
+        <h2 class="border-bottom">Calculator</h2>
+          <form class='my-5'>
+            <div clas='form-group range-field my-5'>
+              <input id="calculatorSlider" class="no-border custom-range" type="range" value="0" min="0" max="<%= @property.amount_to_be_raised - @property.sum_amount_invested %>" step="1000" data-valuation='<%= @property.valuation %>' style="color:#1FC1A1"/>
+            </div>
+          </form>
+              <div class="row">
+                <div class="col-md-6 text-center pb-5">
+                  <h2><span class="badge blue lighten-2 mb-4">Invest</span></h2>
+                  <h2 class="display-4" style="color:#1FC1A1"><strong id="invest-net-amount">0€</strong></h2>
+                </div>
+                <div class="col-md-6 text-center pb-5">
+                  <h2><span class="badge blue lighten-2 mb-4">shares owned</span></h2>
+                  <h2 class="display-4" style="color:#1FC1A1"><strong id="shares-owned">0%</strong></h2>
+                </div>
+              </div>
+        </div>
+      </div>
       <div class="d-flex justify-content-between">
         <div class=" card-show">
           <h3 class="text-center border-bottom"> <%=@property.location%></h3>
           <p class="p-4 text-justify align-center"><%= @property.area_description%></p>
+          <div class='img-buy-house'>
+            <%= image_tag 'buy_house.svg' %>
+          </div>
         </div>
         <div
         id="map"

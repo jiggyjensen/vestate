@@ -136,37 +136,6 @@
   width: 100px;
 }
 
-.days-left-new {
-  position: absolute;
-  font-weight: bold;
-  right: 14px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  /*transform: rotate(-30deg);*/
-  background-color: #1FC1A1;
-  color: #F2F3F4;
-  line-height: 150px;
-  text-align: center;
-  /*padding: 15px 15px 15px 15px;*/
-  top: 14px;
-  z-index: 0;
-}
-
-.circle-days-left  {
-  position: absolute;
-  right: -150px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  /*transform: rotate(-30deg);*/
-  background-color: #393E46;
-  color: #F2F3F4;
-  line-height: 180px;
-  text-align: center;
-  /*padding: 15px 15px 15px 15px;*/
-  top: -36px;
-  z-index: 1;
 }
 
 .investment-banner h2 {
@@ -174,3 +143,4 @@
   font-size: 25px;
   padding: 15px 0;
 }
+
