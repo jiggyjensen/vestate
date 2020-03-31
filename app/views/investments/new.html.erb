@@ -1,11 +1,12 @@
-
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(@property.photos.first) %>);"></div>
-
-<div class='d-flex justify-content-center p-5'>
+  <div class='d-flex justify-content-center p-5'>
+    <% if user_signed_in? && current_user.validated_investor? %>
   <div class="card-new-investment align-items-center mr-2 p-5">
     <h4> Accept Terms and Conditions </h4>
     <iframe src='<%= asset_url("tac.pdf")%>'></iframe>
   </div>
+
+
   <div class="card-new-investment align-items-center ml-2 p-5">
     <h4> Confirm Investment Amount </h4>
     <%= simple_form_for([@property, @investment ])  do |form| %>
@@ -18,6 +19,9 @@
      <%= form.button :submit, 'Confirm investment', class: "btn btn-success btn-radius w-100" %>
      <% end %>
    </div>
+   <% else  %>
+   <p>Your profile needs to be validated before being able to invest</p>
+   <% end %>
  </div>
 
 

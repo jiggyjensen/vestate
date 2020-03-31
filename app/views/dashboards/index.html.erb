@@ -1,6 +1,10 @@
 <div class="hero">
     <h1>My Portfolio</h1>
+    <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash' %>
+    <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash' %>
 </div>
+
+
 <div class="text-center">
     <div class="info">
       <h3>Total currently invested:</h3><p><%= current_user.investment_sum %> €</p>
@@ -80,6 +84,40 @@
      </div>
      <% end %>
 
+<div class=" d-flex justify-content-around text-center">
+<div class="mb-5">
+  <%if current_user.admin %>
+
+<div class="card-investment">
+  <h2 class="mt-4">Validate Investor Profile</h2>
+  <%  @investors.each do |investor|%>
+  <div class=" m-3">
+    <%= investor.first_name %>
+    <%= investor.last_name  %>
+    <%= investor.email  %>
+    <%= link_to("accept", accept_investor_path(investor), method: :patch, class: "accept-btn") %>
+    <%= link_to("reject", reject_investor_path(investor), method: :patch, class: "reject-btn") %>
+  </div>
+    <% end %>
+  </div>
+</div>
 
 
+<div>
+
+  <div class="card-investment">
+    <h2 class="mt-4">Validate Developer Profile</h2>
+  <%  @developers.each do |developer|%>
+  <div class="m-3">
+    <%= developer.first_name %>
+    <%= developer.last_name  %>
+    <%= developer.email  %>
+    <%= link_to("accept", accept_developer_path(developer), method: :patch, class: "accept-btn") %>
+    <%= link_to("reject", reject_developer_path(developer), method: :patch, class: "reject-btn") %>
+  </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+</div>
 
