@@ -233,11 +233,11 @@ investment_6 = Investment.create!(
 
 # ATTACHING PHOTOS WITH PROPERTIES
 
-property_1.photo.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
-property_2.photo.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
-property_3.photo.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
-property_4.photo.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
-property_5.photo.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
+property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
+property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
+property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
+property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
+property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
 
 
 #M MULTIPLE PHOTOS FOR PROPERTIES CAN COME LATER
