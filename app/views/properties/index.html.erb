@@ -23,20 +23,20 @@
   <div class="card-container">
     <div class="row" >
       <% @properties.each do |property| %>
-      <div class="col-4 mt-4 card-property-column">
-        <div class="card-property">
+      <div class="col-4 mt-4 card-property-column ">
+        <div class="card-property ">
           <div class="card__info-hover">
-            <%= link_to property_likes_path(property), class: "card__like", method: :post do %>
+            <%= link_to property_likes_path(property), class: " card__like", method: :post do %>
             <% if user_signed_in? && property.likes.where(user_id: current_user).any?# # la property a ét élike %>
               <i class="fas fa-heart" style="color:#f62928; font-size: 25px;"></i>
             <% else %>
               <i class="far fa-heart" style="color:#f62928; font-size: 25px;"></i>
             <% end %>
           <% end %>
-            <div class="img-hover-zoom">
+            <div class="img-hover-zoom  ">
               <%= link_to property_path(property) do  %>
               <% if property.photos.attached? %>
-            <div class="card-property-img card-property-img--hover"><%= cl_image_tag property.photos[0].key %></div>
+            <div class="card-property-img card-property-img--hover "><%= cl_image_tag property.photos[0].key %></div>
             <% else %>
             <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img"%>
             <% end %>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="card-description">
-              <h5><%= property.name.truncate(70) %></h5>
+              <h5 class="text-white "><%= property.name.truncate(70) %></h5>
             </div>
 
           </div>
