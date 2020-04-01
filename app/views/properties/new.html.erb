@@ -19,8 +19,8 @@
 
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
     <%= f.input :financials, input_html: { placeholders: 'Input some text about the property cost, development etc breakdown of costs and returns'} %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.input :documents, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos'  %>
+    <%= f.input :documents, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📄 Upload documents' %>
     <!-- Can maybe add some label here to tell user how to compute this number but leave for now -->
     <%= f.submit "Submit", class: "btn-success w-100 mt-0" %>
     <%= link_to "Go back", root_path, class: "btn-secondary w-100 mb-3 d-block"%>
