@@ -17,8 +17,19 @@
       <h3>Total currently invested:</h3><p><%= current_user.investment_sum %> €</p>
     </div>
 </div>
-<div class="investment-chart">
-  <%= line_chart [{name: current_user.first_name, data: current_user.investments.group_by_day(:created_at).count }, {name: "All users", data: Investment.all.group_by_day(:created_at).count }] %>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Investments</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My projects</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Wishlist</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Admin</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
 </div>
 <div class="investment-banner">
   <h2>You currently have (<%= current_user.investments.count %>) property investments in your portfolio</h2>
@@ -83,6 +94,9 @@
     <% end %>
   </div>
 <% end %>
+      <div class="investment-chart">
+        <%= line_chart [{name: current_user.first_name, data: current_user.investments.group_by_day(:created_at).count }, {name: "All users", data: Investment.all.group_by_day(:created_at).count }] %>
+      </div>
 <div class=" d-flex justify-content-around text-center">
     <%if current_user.admin %>
       <div class="card-investment">
@@ -101,6 +115,7 @@
           </div>
         <% end %>
       </div>
+
       <div class="card-investment">
         <h2 class="mt-4">Validate Developers</h2>
         <% @developers.each do |developer|%>
