@@ -24,6 +24,14 @@
 }
 
 
+.home-carouselle.card-property-img {
+  height: 60vh;
+}
+
+.card-carou.card-property {
+height: 60vh;
+
+}
 .card-property {
   background: #333;
   border-radius: 6px;
@@ -84,6 +92,10 @@
   text-decoration: none;
 }
 
+.card__info.location-carousselle {
+  padding: 5px;
+}
+
 .card-property-img .card-property-img--hover {
   transition: transform .9s ease;
   text-decoration: none;
@@ -117,6 +129,10 @@
 .img-hover-zoom {
   overflow: hidden;
   height: 450px
+}
+
+.img-hover-zoom.img-carousselle {
+  height: 310px
 }
 
 .info {
