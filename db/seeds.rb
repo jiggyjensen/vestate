@@ -216,14 +216,14 @@ There is an abundance of entertaining space and a dining area which follows onto
     user: user_5,
     property: property_1,
     amount: 50000,
-    created_at: DateTime.new(2020,1,31,9)
+    created_at: DateTime.new(2020,3,31,9)
     )
 
   investment_2 = Investment.create!(
     user: user_6,
     property: property_1,
     amount: 50000,
-    created_at: DateTime.new(2020,2,01,9)
+    created_at: DateTime.new(2020,3,10,9)
     )
 
   investment_3 = Investment.create!(
@@ -236,7 +236,7 @@ There is an abundance of entertaining space and a dining area which follows onto
     user: user_7,
     property: property_2,
     amount: 25000,
-    created_at: DateTime.new(2020,2,20,9)
+    created_at: DateTime.new(2020,3,07,9)
     )
 
 investment_5 = Investment.create!(
@@ -251,6 +251,35 @@ investment_6 = Investment.create!(
     property: property_4,
     amount: 45000,
     created_at: DateTime.new(2020,3,14,9)
+    )
+
+investment_7 = Investment.create!(
+    user: user_9,
+    property: property_5,
+    amount: 1000,
+    created_at: DateTime.new(2020,3,16,9)
+    )
+
+
+investment_8 = Investment.create!(
+    user: user_1,
+    property: property_4,
+    amount: 4000,
+    created_at: DateTime.new(2020,2,27,9)
+    )
+
+investment_9 = Investment.create!(
+    user: user_2,
+    property: property_5,
+    amount: 2000,
+    created_at: DateTime.new(2020,2,27,9)
+    )
+
+investment_10 = Investment.create!(
+    user: user_3,
+    property: property_4,
+    amount: 1500,
+    created_at: DateTime.new(2020,3,16,9)
     )
 
 # ATTACHING PHOTOS WITH PROPERTIES
