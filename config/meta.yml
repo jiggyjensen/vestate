@@ -1,5 +1,5 @@
 meta_product_name: "Vestate"
 meta_title: "Vestate - Why Do It Alone?"
 meta_description: "We’ve made property investing easier for you."
-meta_image: "resizeimage.png" # should exist in `app/assets/images/`
+meta_image: "VE-black-resize.png" # should exist in `app/assets/images/`
 twitter_account: "@vestate_twitter_account"   # required for Twitter Cards
