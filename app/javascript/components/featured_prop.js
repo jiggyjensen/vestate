@@ -4,8 +4,8 @@ function featuredProp () {
     slidesToShow: 1,
     arrows: false,
     asNavFor: '.project-strip',
-    autoplay: true,
-    autoplaySpeed: 3000
+    autoplay: false,
+    autoplaySpeed: 3000000,
   });
 
   $(".project-strip").slick({
