@@ -256,8 +256,8 @@
   border-radius: 32px;
 }
 
-.btn-secours {
 
+.btn-secours {
   top: 80px;
   right: 0px;
   margin-top: 20px;
@@ -277,4 +277,13 @@
   color: $dark-grey;
   text-decoration: none;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 32px;
 }
