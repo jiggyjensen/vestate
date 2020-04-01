@@ -172,7 +172,7 @@
 .section__title {
   font-size: 3em;
   line-height: 1;
-  margin: 0 0 20px;
+  margin: 7px 0 -102px;
 
 }
 
@@ -198,6 +198,7 @@
 
 .project-strip .project {
     cursor: pointer;
+
 }
 
 .project-strip .card-property {
@@ -213,18 +214,17 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 172px;
   bottom: 0;
   margin: auto;
 }
 
 .project-screen .project-detail {
     position: absolute;
-    top: -145px;
+    top: -100px;
     left: 0;
     right: 0;
-    width: 578px;
-    height: 361px;
+    width: 400px;
     margin: 32px auto 0;
     z-index: 1;
     background-color: #333;
@@ -242,7 +242,9 @@
 
 .project-screen .project-details .project{
     margin-right: -100%;
+    height: 250px;
     float: left;
     cursor: move;
+    border-radius: 6px;
   }
 
