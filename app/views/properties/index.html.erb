@@ -29,7 +29,7 @@
             <div class="like-container like-for-<%= property.id %>">
             <%= render "liked_properties", user: current_user, property: property %>
             </div>
-            <div class="img-hover-zoom">
+            <div class="img-hover-zoom ">
               <%= link_to property_path(property) do  %>
               <% if property.photos.attached? %>
             <div class="card-property-img card-property-img--hover "><%= cl_image_tag property.photos[0].key %></div>

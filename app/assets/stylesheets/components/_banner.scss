@@ -144,3 +144,19 @@
   padding: 15px 0;
 }
 
+.banner-new-investment{
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 400px;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+}
+.banner-new-investment-message {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  max-height: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+}

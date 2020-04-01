@@ -1,15 +1,16 @@
-<div class="container bg-white text-center h-100">
-  <div class="row justify-content-around mt-5 h-100">
-    <div class="col-6 my-auto card-confirmation-payment text-center">
-      <h1>Order #<%= @order.id %></h1>
-      <div class="text-green"><%= @order.state %></div>
-      <ul class="list-unstyled mt-3">
-        <li class="mt-3"><strong>ISSUED ON:</strong> <%= @order.created_at.to_date %></li>
-        <li class="mt-3"><strong>INVESTMENT:</strong> <%= @order.investment.property.name %></li>
-        <li class="mt-3"><strong>TOTAL:</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-      <%= link_to "Back to homepage", root_path, class: "btn-success w-100 d-block"  %>
+  <div class="container bg-white text-center h-100">
+    <div class="row justify-content-around mt-5 h-100">
+      <div class="col-6 my-auto card-confirmation-payment text-center">
+        <h1>Order #<%= @order.id %></h1>
+        <div class="text-green"><%= @order.state %></div>
+        <ul class="list-unstyled mt-3">
+          <li class="mt-3"><strong>ISSUED ON:</strong> <%= @order.created_at.to_date %></li>
+          <li class="mt-3"><strong>INVESTMENT:</strong> <%= @order.investment.property.name %></li>
+          <li class="mt-3"><strong>TOTAL:</strong> <%= humanized_money_with_symbol @order.amount %></li>
+          </li>
+        </ul>
+        <%= link_to "Back to homepage", root_path, class: "btn-success w-100 d-block"  %>
+      </div>
     </div>
   </div>
 </div>
