@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
   <title><%= meta_title %></title>
 <meta name="description" content="<%= meta_description %>">
 
@@ -53,7 +54,31 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script>
+    <script id="rendered-js">
+    $(".project-detail").slick({
+      slidesToShow: 1,
+      arrows: false,
+      asNavFor: '.project-strip',
+      autoplay: true,
+      autoplaySpeed: 2000 });
+
+
+    $(".project-strip").slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: false,
+      asNavFor: '.project-detail',
+      dots: false,
+      infinite: true,
+      centerMode: true,
+      focusOnSelect: true });
+    //# sourceURL=pen.js
+    </script>
 
   </body>
+
 </html>
 
