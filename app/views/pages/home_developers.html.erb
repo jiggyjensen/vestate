@@ -2,55 +2,58 @@
   <div class="container do-it">
     <h1 class="mb-5"> Looking to <strong> Raise Money For Your Development Project  </strong> ? </h1>
     <p class="mb-5">With Vestate and its crowd investors, raising funds for your next property acquisition / development has never been so easy</p>
-    <%= link_to "Start New Application", new_property_path, class: 'btn-success-home' %>
-    <%= link_to "Talk To The Team", "#", class: 'btn-secondary-home' %>
+    <%= link_to "Start New Application", new_property_path, class: 'btn-success-home mb-5' %>
+    <%= link_to "Talk To The Team", "#", class: 'btn-secondary-home mb-5' %>
   </div>
 </div>
 
+<div class="container mb-5" >
+  <div class="how-it-works position-relative">
+    <h1 class="pt-3 pb-2"> Learn More </h1>
+     <%= image_tag 'questions.svg', class: 'img-questions position-absolute' %>
+   <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h4 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h4> How it works </h4>
+          </button>
+        </h4>
+      </div>
 
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <h4> How it works </h4>
-        </button>
-      </h2>
-    </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-      <p> <strong>1.</strong> Send us the details of your property and we will review </p>
-      <p> <strong>2.</strong> If your investment meets our minimum criteria, we will list the property on Vestate </p>
-      <p> <strong>3.</strong> (first this is done privately and then publicly - described below) </p>
-      <p> <strong>4.</strong> Once, the funding level is reached, an SPV set up by Vestate acquires the property and investors / developers retain a share in the company propertionate to their investment amount </p>
-      <p> <strong>5.</strong> Develop the property, generate profits and share the returns with the investors </p>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <p> <strong>1.</strong> Send us the details of your property and we will review </p>
+          <p> <strong>2.</strong> If your investment meets our minimum criteria, we will list the property on Vestate </p>
+          <p> <strong>3.</strong> (first this is done privately and then publicly - described below) </p>
+          <p> <strong>4.</strong> Once, the funding level is reached, an SPV set up by Vestate acquires the property and investors / developers retain a share in the company propertionate to their investment amount </p>
+          <p> <strong>5.</strong> Develop the property, generate profits and share the returns with the investors </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <h4> Private Crowdfunding </h4>
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-       <p> <strong>1.</strong> At Vestate, we take developer validation seriously and we put our investors and developers first </p>
-       <p> <strong>2.</strong> In order to list your property on the platform, a minimum of 10% of the funding amount must be reached by the develop and its known network </p>
-       <p> <strong>3.</strong> Once your property has reached the minimum private fundraising level, the investment is open to the public crowd </p>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h4 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h4> Private Crowdfunding </h4>
+          </button>
+        </h4>
       </div>
-    </div>
-  </div>
-  <div class="card">
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+         <p> <strong>1.</strong> At Vestate, we take developer validation seriously and we put our investors and developers first </p>
+         <p> <strong>2.</strong> In order to list your property on the platform, a minimum of 10% of the funding amount must be reached by the develop and its known network </p>
+         <p> <strong>3.</strong> Once your property has reached the minimum private fundraising level, the investment is open to the public crowd </p>
+       </div>
+     </div>
+   </div>
+   <div class="card">
     <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
+      <h4 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           <h4> Public Crowdfunding </h4>
         </button>
-      </h2>
+      </h4>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
@@ -61,5 +64,6 @@
     </div>
   </div>
 </div>
-
+</div>
+</div>
 

@@ -1,5 +1,22 @@
+.card-header {
+  background: $home-grey;
+}
+
 .card-header h4 {
   color: #1FC1A1;
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
+}
+
+.card-body p{
+  color: black;
+  font-size: 12px;
+}
+
+.img-questions {
+  margin-right: 0px;
+  height: 50%;
+  right: -150px;
+  top: 150px;
 }
