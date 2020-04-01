@@ -158,10 +158,9 @@
 
 
 .section-project {
-  padding: 15px 0;
+  padding: 50px 0;
   position: relative;
   background-color: #EDEDED;
-  height: 80vh;
 }
 
 .section__title, .section__subtitle {
@@ -173,13 +172,8 @@
 .section__title {
   font-size: 3em;
   line-height: 1;
-  margin: 0 0 -7%;
-  margin-top: 2%;
-}
+  margin: 0 0 20px;
 
-.slick-slide img {
-  display: block;
-  height: 38vh;
 }
 
 .section__subtitle a {
@@ -193,33 +187,29 @@
 .project-carousel {
   position: relative;
   padding: 50px 0;
-  height: 70vh;
 }
 
 
 .project-strip {
-  margin: 124px 0 150px;
+  margin: 150px 0 150px;
   filter: blur(10px);
-
   display: flex;
 }
 
 .project-strip .project {
     cursor: pointer;
-
 }
 
 .project-strip .card-property {
-    max-width: auto;
-    width: auto;
-    height: 350px;
-    display: cover;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
 
 
 .project-screen {
-  width: 700px;
-  height: 490px;
+  width: 768px;
+  height: 451px;
   position: absolute;
   left: 0;
   right: 0;
@@ -230,10 +220,10 @@
 
 .project-screen .project-detail {
     position: absolute;
-    top: -0px;
+    top: -145px;
     left: 0;
     right: 0;
-    width: 542px;
+    width: 578px;
     height: 361px;
     margin: 32px auto 0;
     z-index: 1;
@@ -243,8 +233,8 @@
 
 .project-screen .screen-frame{
     content:" ";
-    width: 700px;
-    height: 400px;
+    width: 768px;
+    height: 451px;
     position: absolute;
     background-image: url("https://dl.dropboxusercontent.com/u/26808427/cdn/experiments/training/macbook-frame.png");
     background-repeat: no-repeat;
