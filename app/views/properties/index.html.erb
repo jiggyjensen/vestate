@@ -28,9 +28,9 @@
           <div class="card__info-hover">
             <%= link_to property_likes_path(property), class: "card__like", method: :post do %>
             <% if user_signed_in? && property.likes.where(user_id: current_user).any?# # la property a ét élike %>
-              <i class="fas fa-heart" style="color:#f62928;"></i>
+              <i class="fas fa-heart" style="color:#f62928; font-size: 25px;"></i>
             <% else %>
-              <i class="far fa-heart" style="color:#f62928;"></i>
+              <i class="far fa-heart" style="color:#f62928; font-size: 25px;"></i>
             <% end %>
           <% end %>
             <div class="img-hover-zoom">

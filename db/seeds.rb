@@ -216,7 +216,7 @@ There is an abundance of entertaining space and a dining area which follows onto
     user: user_5,
     property: property_1,
     amount: 50000,
-    created_at: DateTime.new(2020,3,31,9)
+    created_at: DateTime.new(2020,3,22,9)
     )
 
   investment_2 = Investment.create!(
@@ -235,7 +235,7 @@ There is an abundance of entertaining space and a dining area which follows onto
   investment_4 = Investment.create!(
     user: user_7,
     property: property_2,
-    amount: 25000,
+    amount: 15000,
     created_at: DateTime.new(2020,3,07,9)
     )
 
