@@ -3,7 +3,18 @@ class LikesController < ApplicationController
 
   def create
     @property.likes.create(user_id: current_user.id)
-    redirect_to properties_path
+    respond_to do |format|
+    format.html { redirect_to properties_path }
+    format.js
+    end
+  end
+
+  def destroy
+    @property.likes.find_by(user_id: current_user.id).destroy
+    respond_to do |format|
+    format.html { redirect_to properties_path }
+    format.js
+    end
   end
 
   private

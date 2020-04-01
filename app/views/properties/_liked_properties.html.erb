@@ -1,0 +1,9 @@
+<% if user_signed_in? && property.likes.find_by(user_id: user)# # la property a ét élike %>
+  <%= link_to property_like_path(property, property.likes.find_by(user_id: user)), class: "card__like", method: :delete, remote: true do %>
+    <i class="fas fa-heart" style="color:#f62928; font-size: 25px;"></i>
+  <% end %>
+<% else %>
+  <%= link_to property_likes_path(property), class: "card__like", method: :post, remote: true do %>
+    <i class="far fa-heart" style="color:#f62928; font-size: 25px;"></i>
+  <% end %>
+<% end %>
