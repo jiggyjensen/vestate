@@ -1,6 +1,8 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(@property.photos.first) %>);"></div>
+
+  <% if user_signed_in? && current_user.validated_investor? %>
   <div class='d-flex justify-content-center p-5'>
-    <% if user_signed_in? && current_user.validated_investor? %>
+  <div class="banner-new-investment" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(@property.photos.first) %>);"></div>
+
   <div class="card-new-investment align-items-center mr-2 p-5">
     <h4> Accept Terms and Conditions </h4>
     <iframe src='<%= asset_url("tac.pdf")%>'></iframe>
@@ -11,7 +13,8 @@
     <h4> Confirm Investment Amount </h4>
     <%= simple_form_for([@property, @investment ])  do |form| %>
     <div class= "form-group" >
-     <%= form.input :amount, label: "Investment Amount", class: "form-control" %> </div>
+     <%= form.input :amount, label: "Investment Amount", class: "form-control" %>
+    </div>
      <div class= "form-group form-check" >
        <%= form.check_box :terms_accepted, class: "form-check-input" %>
        <%= form.label "I agree with the terms and conditions", class: "form-check-label" %>
@@ -19,10 +22,17 @@
      <%= form.button :submit, 'Confirm investment', class: "btn btn-success btn-radius w-100" %>
      <% end %>
    </div>
+   </div>
    <% else  %>
-   <p>Your profile needs to be validated before being able to invest</p>
+  <div class="banner-new-investment-message" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(@property.photos.first) %>);">
+   <div>
+    <p class="text-center  pt-5 new-investments-message"><strong>Your profile needs to be validated before being able to invest</strong></p>
+    <div class="new-investments-message-link"><%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-secours' %></div>
+  </div>
+  </div>
    <% end %>
- </div>
+
+
 
 
 
