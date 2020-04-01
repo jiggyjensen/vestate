@@ -36,8 +36,6 @@
             <div class="img-hover-zoom">
               <%= link_to property_path(property) do  %>
               <% if property.photos.attached? %>
-
-
             <div class="card-property-img card-property-img--hover"><%= cl_image_tag property.photos[0].key %></div>
             <% else %>
             <%= image_tag "https://www.ukmoths.org.uk/site/templates/includes/images/noimageyet420.png", class: "card-property-img"%>
