@@ -153,8 +153,9 @@
     </div>
     <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
     </div>
-    <div class="d-flex justify-content-center my-3"><%= link_to property_likes_path(@property), class: "btn btn-outline-secondary btn-border-radius", method: :post do %>
-        Save to Favorites<i class="fas fa-heart" style="color:#f62928; font-size: 20px; padding: 5px;"></i>
-          <% end %>
+    <div class="d-flex justify-content-center my-3">
+      <div class="like-container like-for-show-<%= @property.id %>">
+        <%= render "liked_properties_show", user: current_user, property: @property %>
+      </div>
     </div>
   </div>
