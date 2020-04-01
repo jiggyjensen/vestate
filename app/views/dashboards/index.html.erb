@@ -1,7 +1,16 @@
 <div class="hero">
     <h1>My Portfolio</h1>
-    <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash' %>
-    <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash' %>
+    <% if current_user.validated_investor %>
+      <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash d-none' %>
+    <% else %>
+      <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash' %>
+    <% end %>
+
+    <% if current_user.validated_developer%>
+      <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash d-none' %>
+    <% else %>
+      <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash' %>
+    <% end %>
 </div>
 <div class="text-center">
     <div class="info">
