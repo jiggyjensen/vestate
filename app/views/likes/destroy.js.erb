@@ -1,0 +1,1 @@
+document.querySelector(".like-for-<%= @property.id %>").innerHTML = '<%= j render "properties/liked_properties", property: @property, user: current_user %>'

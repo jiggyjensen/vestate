@@ -1,0 +1,6 @@
+if (document.querySelector(".like-for-<%= @property.id %>")){
+  document.querySelector(".like-for-<%= @property.id %>").innerHTML = '<%= j render "properties/liked_properties", property: @property, user: current_user %>'
+}
+else {
+  document.querySelector(".like-for-show-<%= @property.id %>").innerHTML = '<%= j render "properties/liked_properties_show", property: @property, user: current_user %>'
+}
