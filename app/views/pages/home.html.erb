@@ -14,7 +14,7 @@
     <div class="cards-home mb-5">
       <div class="info-card">
         <h3> Invest </h3>
-        <p> Buy shares in income producing property investments from £100. Choose how many shares you wish to own in any available properties</p>
+        <p> Buy shares in income producing property investments from €100. Choose how many shares you wish to own in any available properties</p>
         <%= image_tag 'invest-now.svg' %>
       </div>
       <div class="info-card" id="grow">
@@ -89,14 +89,14 @@
                 </div>
                 <br>
                 <div class="meter">
-                  <span class="pl-4 pt-1"style="width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
+                  <span class="pl-4 pt-1"style="color: black; width: <%= property.percentage_achieved%>%"><%=property.percentage_achieved%>%</span>
                 </div>
                 <div class="card_featured_info">
                   <div>
                     <p class="feat-location text-center">Location: <%= property.location %></p>
                   </div>
                 </div>
-                <%= link_to("VIEW DETAILS", property_path(property), class: "btn btn-property text-center") %>
+                <%= link_to "VIEW DETAILS", property_path(property), class: "btn btn-property text-center" %>
               </div>
            </div>
             <% end %>
@@ -106,11 +106,6 @@
           </div>
       </div>
     </div>
-
-
-
-
-
 
 <div class="container container-home d-flex position-relative">
   <div class='leaning-man position-absolute'>
