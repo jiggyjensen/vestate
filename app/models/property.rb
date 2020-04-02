@@ -33,14 +33,14 @@ class Property < ApplicationRecord
   end
 
   def equity_offered
-    (amount_to_be_raised / valuation)
+    (amount_to_be_raised / valuation).to_f
   end
 
   def ownership_dev
-    (1 - equity_offered)
+    (1 - equity_offered).to_f
   end
 
   def crowd_investment
-    (equity_offered * percentage_achieved)
+    (equity_offered * percentage_achieved).to_f
   end
 end
