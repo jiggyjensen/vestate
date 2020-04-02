@@ -235,7 +235,7 @@ There is an abundance of entertaining space and a dining area which follows onto
   investment_4 = Investment.create!(
     user: user_7,
     property: property_2,
-    amount: 15000,
+    amount: 25000,
     created_at: DateTime.new(2020,3,07,9)
     )
 
