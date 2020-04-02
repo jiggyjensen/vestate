@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light <%= 'navbar-solid' if @solid_nav %> navbar-lewagon navbar-transparent">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "VE.png" %>
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= image_tag "VE.png" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,22 +11,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Invest", "/properties", class: "nav-link" %>
+        <%= link_to "About", root_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Invest", properties_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Raise", home_developers_path, class: "nav-link" %>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <%= link_to "Portfolio", dashboards_path, class: "nav-link" %>
       </li>
-       <li class="nav-item">
+       <!-- <li class="nav-item">
         <%= link_to "Contact", "#", class: "nav-link" %>
-      </li>
+      </li> -->
       <li class="nav-item">
         <% if user_signed_in? %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         <% else %>
-          <%= link_to "Log in", new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Log in", new_user_registration_path, class: "nav-link" %>
         <% end %>
       </li>
     </ul>
