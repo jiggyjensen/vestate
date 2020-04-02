@@ -1,6 +1,6 @@
 class Property < ApplicationRecord
   belongs_to :user
-  has_many :investments
+  has_many :investments, dependent: :destroy
   has_many :investors, through: :investments, source: :user
   validates :name, :location, :description, :amount_to_be_raised, presence: true
   has_many_attached :photos

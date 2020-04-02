@@ -1,6 +1,7 @@
 class Investment < ApplicationRecord
   belongs_to :user
   belongs_to :property
+  has_many :orders, dependent: :destroy
   validates :amount, presence: true
   validate :invest_amount_less_than_amount_to_be_raised
   attr_accessor :terms_accepted
