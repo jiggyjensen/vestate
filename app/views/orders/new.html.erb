@@ -1,11 +1,10 @@
-
 <div class="h-100  bg-white">
-<div class="banner-sign-up text-center mb-0" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(<%=url_for(@investment.property.photos.first)%>);">
+<div class="banner-sign-up text-center mb-0" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(<%=url_for(@investment.property.photos.first)%>);">
   <div class="text-center w-100 text-white">
-    <h1>Are you sure?</h1>
+    <h1>Proceed to the payment of <%= @investment.amount %>€</h1>
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'investment_id', @investment.id %>
-      <%= submit_tag 'Confirm Investment', class: 'btn-success' %>
+      <%= submit_tag 'Go to payment', class: 'btn-success' %>
     <% end %>
   </div>
 </div>

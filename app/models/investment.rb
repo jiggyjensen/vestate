@@ -4,4 +4,8 @@ class Investment < ApplicationRecord
   validates :amount, presence: true
   attr_accessor :terms_accepted
   monetize :amount_cents
+
+  def share_percentage
+    ((amount.to_f / property.valuation.to_f) * 100).round
+  end
 end
