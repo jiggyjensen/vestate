@@ -62,18 +62,11 @@
   text-align: center;
 }
 
-.card-description:hover {
+
+.card-property-info a:hover {
   text-decoration: none;
 }
 
-.card-property:hover {
- /* box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-  transform: scale(1.10, 1.10);
-  z-index: 10;
-  position: absolute;
-  width: 100%;*/
-  text-decoration: none;
-}
 
 .card__info {
   background-color: #333;
@@ -92,9 +85,14 @@
     transform: scale(1.8, 1.8);
     background-size: cover;
     opacity: 0.6;
-    text-decoration: none;
+
 
 }
+
+.card-property a:hover {
+  text-decoration:none;
+}
+
 
 
 .card-property-column {
@@ -172,3 +170,5 @@
 .text-decoration {
   text-decoration: none;
 }
+
+
