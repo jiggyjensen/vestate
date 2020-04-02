@@ -56,7 +56,12 @@
 .no-decoration a {
 
   text-decoration: none;
+  color: $dark-grey;
 
+}
+
+.no-decoration:hover {
+  color: #0cffca;
 }
 
 .img-download img {
