@@ -1,4 +1,5 @@
-<div class="hero">
+<div class='absolute-for-cards'>
+  <div class="hero text-center my-10">
     <h1>My Portfolio</h1>
     <% if current_user.validated_investor %>
       <%= link_to "Become an investor", questionnaire_investors_path, class: 'btn-success-dash d-none' %>
@@ -11,95 +12,114 @@
     <% else %>
       <%= link_to "Become a developer", questionnaire_developers_path, class: 'btn-secondary-dash' %>
     <% end %>
-</div>
-<div class="text-center">
+  </div>
+  <div class="text-center">
     <div class="info">
-      <h3>Total currently invested:</h3><p><%= current_user.investment_sum %> €</p>
+      <div class='inner-info'>
+        <p>Total invested</p><h3><%= current_user.investment_sum %> €</h3>
+      </div>
     </div>
+    <div class="info-2">
+      <div class='inner-info'>
+        <p>Total raised</p><h3><%= current_user.amount_raised %> €</h3>
+      </div>
+    </div>
+  </div>
+  <p class='white-text-for-border'>test test test</p>
 </div>
-<nav>
+<nav class='nav-list-options'>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Investments</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My projects</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Wishlist</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Admin</a>
+    <a class="nav-item nav-link active nav-color" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Investments</a>
+    <a class="nav-item nav-link nav-color" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My projects</a>
+    <a class="nav-item nav-link nav-color" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Wishlist</a>
+    <a class="nav-item nav-link nav-color" id="nav-admin-tab" data-toggle="tab" href="#nav-admin" role="tab" aria-controls="nav-admin" aria-selected="false">Admin</a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-</div>
-<div class="investment-banner">
-  <h2>You currently have (<%= current_user.investments.count %>) property investments in your portfolio</h2>
-</div>
-<% if current_user.investments.any? %>
-  <div class="card-investment-container">
-    <% @investments.each do |investment| %>
-        <div class="card-investment d-flex">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="investment-banner">
+      <h2>My investments</h2>
+    </div>
+    <div class="investment-banner">
+      <h2>You currently have (<%= current_user.investments.count %>) property investments in your portfolio</h2>
+    </div>
+    <% if current_user.investments.any? %>
+      <div class="card-investment-container">
+        <% @investments.each do |investment| %>
+          <div class="card-investment shadow-lg d-flex">
             <% if investment.property.photos.attached? %>
-            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photos.first) %>);">
+              <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(investment.property.photos.first) %>);">
             <% end %>
-            </div>
-            <div class="card-investment-info text-left">
-              <h3><%= investment.property.name %></h3>
-                <p>Currently invested: <%= investment.amount %> €</p>
-                <p>Location: <%= investment.property.location %></p>
-                <p>Dividends earned: <%= investment.property.dividend %> €</p>
-            </div>
-        </div>
-    <% end %>
-  </div>
-<% end %>
-<div class="investment-banner">
-  <h2>You currently have (<%= current_user.properties.count %>) properties in your portfolio</h2>
-</div>
-<% if current_user.properties.any? %>
-  <div class="card-investment-container">
-    <% current_user.properties.each do |property| %>
-      <div class="card-investment d-flex">
-        <% if property.photos.attached? %>
-        <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
-        <% end %>
-        </div>
-      <div class="card-investment-info text-left">
-        <h3><%= property.name %></h3>
-        <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
-        <p>Location: <%= property.location %></p>
-        <p>Valuation: <%= property.valuation %></p>
-        <p>Status: <%= property.status %></p>
-      </div>
-     </div>
-  <% end %>
-</div>
-<% end %>
-<div class="investment-banner">
-  <h2>My Favorite Properties</h2>
-</div>
-<% if current_user.liked_properties.any? %>
-  <div class="card-investment-container">
-    <% current_user.liked_properties.each do |property| %>
-      <div class="card-investment d-flex">
-        <% if property.photos.attached? %>
-          <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
+              </div>
+                <div class="card-investment-info text-left">
+                  <h3><%= investment.property.name %></h3>
+                    <p>Currently invested: <%= investment.amount %> €</p>
+                    <p>Location: <%= investment.property.location %></p>
+                    <p>Dividends earned: <%= investment.property.dividend %> €</p>
+                </div>
           </div>
         <% end %>
-      <div class="card-investment-info text-left">
-        <h3><%= property.name %></h3>
-        <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
-        <p>Location: <%= property.location %></p>
-      </div>
       </div>
     <% end %>
-  </div>
-<% end %>
+
+
       <div class="investment-chart">
         <%= line_chart [{name: current_user.first_name, data: current_user.investments.group_by_day(:created_at).count }, {name: "All users", data: Investment.all.group_by_day(:created_at).count }] %>
       </div>
-<div class=" d-flex justify-content-around text-center">
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="investment-banner">
+      <h2>My properties</h2>
+    </div>
+    <div class="investment-banner">
+      <h2>You currently have (<%= current_user.properties.count %>) properties in your portfolio</h2>
+    </div>
+    <% if current_user.properties.any? %>
+      <div class="card-investment-container">
+        <% current_user.properties.each do |property| %>
+          <div class="card-investment shadow-lg d-flex">
+            <% if property.photos.attached? %>
+            <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
+            <% end %>
+            </div>
+          <div class="card-investment-info text-left">
+            <h3><%= property.name %></h3>
+            <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
+            <p>Location: <%= property.location %></p>
+            <p>Valuation: <%= property.valuation %></p>
+            <p>Status: <%= property.status %></p>
+          </div>
+         </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="investment-banner">
+      <h2>My Favorite Properties</h2>
+    </div>
+    <% if current_user.liked_properties.any? %>
+      <div class="card-investment-container">
+        <% current_user.liked_properties.each do |property| %>
+          <div class="card-investment shadow-lg d-flex">
+            <% if property.photos.attached? %>
+              <div class="banner-show-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= url_for(property.photos.first) %>);">
+              </div>
+            <% end %>
+          <div class="card-investment-info text-left">
+            <h3><%= property.name %></h3>
+            <p>Amount to be raised: <%= property.amount_to_be_raised %> €</p>
+            <p>Location: <%= property.location %></p>
+          </div>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
+    <div class=" d-flex justify-content-around text-center my-5">
     <%if current_user.admin %>
-      <div class="card-investment">
+      <div class="card-investment shadow-lg">
         <h2 class="mt-4">Validate Investors</h2>
         <%  @investors.each do |investor|%>
           <div class="d-flex justify-content-between m-3">
@@ -116,7 +136,7 @@
         <% end %>
       </div>
 
-      <div class="card-investment">
+      <div class="card-investment shadow-lg">
         <h2 class="mt-4">Validate Developers</h2>
         <% @developers.each do |developer|%>
           <div class="d-flex justify-content-between m-3">
@@ -133,5 +153,8 @@
         <% end %>
       </div>
     <% end %>
+    </div>
+  </div>
 </div>
+
 

@@ -14,8 +14,16 @@ class User < ApplicationRecord
 
   def investment_sum
     investments.sum do |investment|
-      investment.amount
+      investment.amount.to_i
     end
+  end
+
+  def amount_raised
+    sum = 0
+    properties.each do |property|
+      sum += property.sum_amount_invested
+    end
+    sum
   end
 end
 
