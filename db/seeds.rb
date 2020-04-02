@@ -248,15 +248,15 @@ investment_5 = Investment.create!(
 
 investment_6 = Investment.create!(
     user: user_9,
-    property: property_4,
-    amount: 45000,
+    property: property_3,
+    amount: 20000,
     created_at: DateTime.new(2020,3,14,9)
     )
 
 investment_7 = Investment.create!(
     user: user_9,
-    property: property_5,
-    amount: 1000,
+    property: property_3,
+    amount: 10000,
     created_at: DateTime.new(2020,3,16,9)
     )
 
@@ -264,21 +264,21 @@ investment_7 = Investment.create!(
 investment_8 = Investment.create!(
     user: user_1,
     property: property_4,
-    amount: 4000,
+    amount: 40000,
     created_at: DateTime.new(2020,2,27,9)
     )
 
 investment_9 = Investment.create!(
     user: user_2,
-    property: property_5,
-    amount: 2000,
+    property: property_4,
+    amount: 20000,
     created_at: DateTime.new(2020,2,27,9)
     )
 
 investment_10 = Investment.create!(
     user: user_3,
     property: property_4,
-    amount: 1500,
+    amount: 10000,
     created_at: DateTime.new(2020,3,16,9)
     )
 
