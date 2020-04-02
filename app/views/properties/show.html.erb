@@ -43,12 +43,15 @@
 </div>
 <div class="container bg-white">
   <div class="show-card bg-white">
-    <div class="meter mt-3 mx-5">
+    <div class="meter mt-4 mx-5">
       <span class="pl-4 py-1 "style="width: <%= @property.percentage_achieved%>%"><%=@property.percentage_achieved%>%</span>
     </div>
-    <h2 class="text-center border-bottom pt-3"> <%=@property.name%></h2>
+    <h2 class="text-center  pt-5 pb-4"> <%=@property.name%></h2>
 
-    <p class=" text-justify border-bottom mx-5"> <%=@property.description%></p>
+    <p class=" text-justify border-bottom border-top mx-5"> <%=@property.description%></p>
+    <div class="like-container text-center pb-3 like-for-show-<%= @property.id %>">
+      <%= render "liked_properties_show", user: current_user, property: @property %>
+    </div>
   </div>
   <div class="container bg-white">
     <div class="d-flex justify-content-around">
@@ -74,12 +77,12 @@
         </div>
         <div class="card-show text-center">
           <h3 class="border-bottom">Download Documents</h3>
-          <div class='no-decoration'><%= link_to "Title Plan", asset_path("Title-Plan.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-          <div class='no-decoration'><%= link_to "Title Register", asset_path("Title Register.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-          <div class='no-decoration'><%= link_to "Market Research Report", asset_path("Market Research Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-          <div class='no-decoration'><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-          <div class='no-decoration'><%= link_to "Valuation Report", asset_path("Valuation Report.pdf") %> <i class="fas fa-external-link-alt"></i></div>
-          <div class='no-decoration'><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf") %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Title Plan", asset_path("Title-Plan.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Title Register", asset_path("Title Register.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Market Research Report", asset_path("Market Research Report.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Investment Memorandum", asset_path("Investment Memorandum.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Valuation Report", asset_path("Valuation Report.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
+          <div class='no-decoration'><%= link_to "Formal Mortgage Offer", asset_path("Formal Mortgage Offer.pdf"), target: "_blank" %> <i class="fas fa-external-link-alt"></i></div>
           <% @property.documents.each do |doc| %>
           <div><%= link_to doc.filename, cloudinary_url(doc.key) %> <i class="fas fa-external-link-alt"></i></div>
           <% end %>
@@ -122,15 +125,17 @@
             </div>
           </form>
               <div class="row">
-                <div class="col-md-6 text-center pb-5">
+                <div class="col-md-6 text-center pb-4">
                   <h2><span class="badge blue lighten-2 mb-4">Invest</span></h2>
                   <h2 class="display-4" style="color:#1FC1A1"><strong id="invest-net-amount">0€</strong></h2>
                 </div>
-                <div class="col-md-6 text-center pb-5">
+                <div class="col-md-6 text-center pb-4">
                   <h2><span class="badge blue lighten-2 mb-4">shares owned</span></h2>
                   <h2 class="display-4" style="color:#1FC1A1"><strong id="shares-owned">0%</strong></h2>
                 </div>
               </div>
+          <div class="d-flex justify-content-center "><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success btn-card-calculator" %></div>
+
              <!--  <div><%= link_to "Invest now", new_property_investment_path(@property), class: "btn-test px-5" %></div> -->
         </div>
       </div>
@@ -151,12 +156,9 @@
       </div>
 
     </div>
-    <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %>
-    </div>
+    <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
     <div class="d-flex justify-content-center my-3">
-      <div class="like-container like-for-show-<%= @property.id %>">
-        <%= render "liked_properties_show", user: current_user, property: @property %>
-      </div>
+
 
     </div>
   </div>
