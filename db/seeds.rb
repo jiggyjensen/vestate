@@ -197,7 +197,7 @@ There is an abundance of entertaining space and a dining area which follows onto
 # COMING SOON ON MARKET
 
   property_5 = Property.create!(
-    user: user_5,
+    user: user_6,
     name: "A beautiful house in the outskirts of Paris ",
     description: "A bright spacious and beautifully presented 5 bedroom, double fronted, Parisian family home benefitting from off street parking and an exceptional rear garden, situated within the heart of a conservation area. Accommodation is both bright and well balanced and comprises; a fabulous double reception room drowned in natural light courtesy of the dual aspect and large, floor to ceiling double glazed sash windows, 2 double bedrooms (one of which is currently arranged as a study) and a bathroom suite housed on the raised ground floor. The vast dining room, additional reception space, utility room and the galley kitchen are situated on the lower level, providing access to the wider than average and secluded West facing rear garden which benefits from a large summer house. There are 2 generous double bedrooms a further bedroom/dressing room and the family bathroom suite on the top floor, all of which feature double glazed sash windows. There is also the added benefit of off street parking, making this an ideal family home.",
     location: "Paris",
@@ -206,8 +206,26 @@ There is an abundance of entertaining space and a dining area which follows onto
     end_date: Date.today + 100,
     amount_to_be_raised: 500000,
     valuation: 500000,
+    status: "currently fundraising "
+    )
+
+  # Coming Soon
+
+  property_6 = Property.create!(
+    user: user_6,
+    name: "Elegant 4th floor apartment in leafy suburbs of London",
+    description: "Based a short walking distance to St. James's Palace, St. James's Park and Green Park, this elegant 4th floor apartment offers beautiful period features throughout, with bright interiors and lift access.
+
+Duke Street, St James's is located close to St. James's Palace and as well as Buckingham Palace. The artistic and quiet district of St. James's boasts with many galleries, auction house Christie's, White Cube Gallery, Royal Academy of Arts.",
+    location: "London",
+    area_description: "St James's is a central district in the City of Westminster, London, forming part of the West End. In the 17th century the area developed as a residential location for the British aristocracy, and around the 19th century was the focus of the development of gentlemen's clubs.",
+    dividend: 12000,
+    end_date: Date.today + 100,
+    amount_to_be_raised: 500000,
+    valuation: 1000000,
     status: "coming soon"
     )
+
 
 
 # CREATING INVESTMENTS TO GO WITH THE PROPERTIES FROM ABOVE
@@ -277,8 +295,8 @@ investment_9 = Investment.create!(
 
 investment_10 = Investment.create!(
     user: user_3,
-    property: property_4,
-    amount: 10000,
+    property: property_5,
+    amount: 100000,
     created_at: DateTime.new(2020,3,16,9)
     )
 
@@ -289,7 +307,7 @@ property_2.photos.attach(io: File.open("app/assets/images/property_images/Proper
 property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
 property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
 property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
-
+property_6.photos.attach(io: File.open("app/assets/images/property_images/Property_6_Photo_1.jpg"), filename: "Photo_1.jpg", content_type: 'image/jpg')
 
 #M MULTIPLE PHOTOS FOR PROPERTIES CAN COME LATER
 
@@ -298,17 +316,21 @@ property_2.photos.attach(io: File.open("app/assets/images/property_images/Proper
 property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
 property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
 property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+property_6.photos.attach(io: File.open("app/assets/images/property_images/Property_6_Photo_2.jpg"), filename: "Photo_2.jpg", content_type: 'image/jpg')
+
 
 property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
+property_6.photos.attach(io: File.open("app/assets/images/property_images/Property_6_Photo_3.jpg"), filename: "Photo_3.jpg", content_type: 'image/jpg')
 
 property_1.photos.attach(io: File.open("app/assets/images/property_images/Property_1_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 property_2.photos.attach(io: File.open("app/assets/images/property_images/Property_2_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 property_3.photos.attach(io: File.open("app/assets/images/property_images/Property_3_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 property_4.photos.attach(io: File.open("app/assets/images/property_images/Property_4_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 property_5.photos.attach(io: File.open("app/assets/images/property_images/Property_5_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
+property_6.photos.attach(io: File.open("app/assets/images/property_images/Property_6_Photo_4.jpg"), filename: "Photo_4.jpg", content_type: 'image/jpg')
 
 puts 'Finished!'
