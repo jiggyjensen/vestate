@@ -123,34 +123,6 @@
   height: 450px
 }
 
-.info {
-  color: white;
-  text-shadow: 2px;
-  padding: 20px;
-  background: #303248;
-  border-radius: 2px;
-  display: inline-block;
-  height: 100px;
-  margin: 1rem;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  width: 100%;
-}
-
-.info h3 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.info p{
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 25px;
-}
 
 .investment-banner {
   text-align: center;
@@ -179,7 +151,6 @@
 }
 
 .card-investment {
-  border: 1px solid $grey-border;
   border-radius: 4px;
   margin: 20px;
   background-color: #FCFFFB;
@@ -195,6 +166,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .text-decoration {
