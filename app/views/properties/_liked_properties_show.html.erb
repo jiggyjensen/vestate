@@ -1,7 +1,7 @@
 <% if user_signed_in? && @property.likes.where(user_id: current_user).any?# # la property a ét élike %>
 This property is in your favorites
 <% else %>
-<%= link_to property_likes_path(@property), class: "btn btn-outline-secondary btn-border-radius", method: :post, remote: true do %>
+<%= link_to property_likes_path(@property), class: "btn btn-outline-secondary pl-4 text-center btn-border-radius", method: :post, remote: true do %>
 Save to Favorites<i class="fas fa-heart" style="color:#f62928; font-size: 20px; padding: 5px;"></i>
 <% end %>
 <% end %>
