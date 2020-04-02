@@ -17,6 +17,9 @@
         <div class="align-items-center ml-2 p-5 text-center">
           <h4 class="mb-5"> Confirm Investment Amount </h4>
           <%= simple_form_for([@property, @investment ])  do |form| %>
+          <% @investment.errors.messages.each do |msg| %>
+            <p> <%= msg %></p>
+           <% end %>
           <div class= "form-group" >
            <%= form.input :amount, label: "Investment Amount", class: "form-control" %>
           </div>

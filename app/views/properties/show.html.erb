@@ -136,7 +136,9 @@
                   <h2 class="display-4" style="color:#1FC1A1"><strong id="shares-owned">0%</strong></h2>
                 </div>
               </div>
-          <div class="d-flex justify-content-center "><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success btn-card-calculator" %></div>
+              <% if @property.sum_amount_invested < @property.amount_to_be_raised %>
+                <div class="d-flex justify-content-center "><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success btn-card-calculator" %></div>
+              <% end %>
 
              <!--  <div><%= link_to "Invest now", new_property_investment_path(@property), class: "btn-test px-5" %></div> -->
         </div>
@@ -158,7 +160,9 @@
       </div>
 
     </div>
-    <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
+    <% if @property.sum_amount_invested < @property.amount_to_be_raised %>
+      <div class="d-flex justify-content-center my-3"><%= link_to "Invest now", new_property_investment_path(@property), class: "btn btn-success" %></div>
+    <% end %>
 
 
 
