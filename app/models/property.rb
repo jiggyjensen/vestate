@@ -5,7 +5,7 @@ class Property < ApplicationRecord
   validates :name, :location, :description, :amount_to_be_raised, presence: true
   has_many_attached :photos
   has_many_attached :documents
-  has_many :likes
+  has_many :likes, dependent: :destroy
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
   include PgSearch::Model
