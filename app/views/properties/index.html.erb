@@ -20,8 +20,9 @@
 </div>
 
 <div class='index-container d-flex flex-column align-items-center' style='position: relative; min-height: 80vh;'>
-  <div class="container card-container">
-    <div class="row" >
+  <div class="card-container">
+   <div class='container'>
+      <div class="row" >
       <% @properties.each do |property| %>
       <div class="col-4 mt-4 card-property-column ">
         <div class="card-property ">
@@ -63,6 +64,7 @@
       </div>
     <% end %>
       </div>
+    </div>
     </div>
 
     <div class="map-container">
