@@ -27,7 +27,7 @@ body {
  position: relative;
 }
 .main-container {
- min-height: calc(100vh - 100px); /* will cover the 100% of viewport */
+ min-height: calc(100vh); /* will cover the 100% of viewport */
  margin-top: 70px;
  overflow: hidden;
  display: block;
