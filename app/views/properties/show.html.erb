@@ -71,6 +71,7 @@
             <h2 class="border-bottom">Ownership</h2>
             <% data = [['Equity Developer', @property.ownership_dev ],
             ['Crowd Equity Owned', (@property.crowd_investment)],
+
             ['Crowd Equity Left',  (100 - @property.ownership_dev - @property.crowd_investment)]] %>
 
             <%= pie_chart data, colors: ["#14ffcb", "#c4c4c4", "#89939E"],library: { pieSliceText: 'value' } %>
